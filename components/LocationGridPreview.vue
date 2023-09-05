@@ -10,7 +10,7 @@
             </p>
 
             <div class="h-full w-full absolute bg-black bg-opacity-50 z-10" />
-            <nuxt-img :src="props.img" class="absolute object-cover h-full w-full" />
+            <img :src="props.img" class="absolute object-cover h-full w-full" />
         </div>
     </nuxt-link>
 </template>
