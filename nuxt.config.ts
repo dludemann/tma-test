@@ -2,6 +2,9 @@ import Butter from 'buttercms';
 import slugify from 'slugify';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    image: {
+        provider: 'netlify',
+    },
     pages: true,
     devtools: { enabled: true },
     css: ['~/assets/css/main.css'],
