@@ -41,3 +41,26 @@ export const getGalleryBySlug = async (slug?: any) => {
         return null;
     }
 };
+
+export const getBlogPosts = async (page: number, page_size: number) => {
+    try {
+        const res = await butter.post.list({
+            page,
+            page_size,
+        });
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const getBlogPost = async (slug: string) => {
+    try {
+        const res = await butter.post.retrieve(slug);
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
