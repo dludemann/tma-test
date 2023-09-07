@@ -41,7 +41,7 @@ const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rou
     <!-- IF JUST PAGINATION -->
     <div v-if="!isBlogPost">
         <div
-            class="py-[220px]"
+            class="py-[200px] relative"
             :style="{
                 backgroundImage: 'url(https://cdn.buttercms.com/EiyEcgzGQyd2H1KLQCqI)',
                 backgroundPosition: 'center',
@@ -49,10 +49,11 @@ const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rou
                 backgroundRepeat: 'no-repeat',
             }"
         >
-            <h1 class="font-light text-[96px] leading-[96px] text-center text-white">Our Blog</h1>
-            <p class="text-[26px] text-center tracking-[1px] leading-[44px] text-white">
+            <h1 class="font-light z-10 relative text-[96px] leading-[96px] text-center text-white">Our Blog</h1>
+            <p class="text-[26px] z-10 relative text-center tracking-[1px] leading-[44px] text-white">
                 Sharing tips for online dating success
             </p>
+            <div class="absolute top-0 left-0 bg-black w-full h-full bg-opacity-50 z-0" />
         </div>
 
         <BlogListEntry
