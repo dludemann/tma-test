@@ -114,7 +114,9 @@
 
         <div class="py-[50px] text-center">
             <p class="text-[39px] mb-[40px] font-bold">Like what you see</p>
-            <button class="border-b-2 text-[18px] py-1 border-black">Book a Call</button>
+            <nav-link to="/online-dating-photographer-near-me">
+                <button class="border-b-2 text-[18px] py-1 border-black">Book a Call</button>
+            </nav-link>
         </div>
     </section>
 

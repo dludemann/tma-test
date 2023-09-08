@@ -43,7 +43,7 @@ console.log(cityInformation);
     <Header />
 
     <!-- HERO -->
-    <section class="bg-black">
+    <section class="bg-black overflow-hidden">
         <section class="container mx-auto flex flex-col lg:flex-row items-center justify-center pb-[60px] relative p-6">
             <div class="max-w-[600px] relative z-10">
                 <h1 class="text-[58px] font-accent tracking-[-1%] leading-[69.6px] font-bold text-white">
@@ -78,7 +78,7 @@ console.log(cityInformation);
             </div>
 
             <div
-                class="flex flex-col lg:flex-row justify-between relative lg:absolute lg:bottom-20 opacity-50 w-full z-50 max-w-[200px] lg:max-w-[1200px] py-12 lg:py-0"
+                class="flex gap-4 flex-col lg:flex-row justify-between relative lg:absolute lg:bottom-20 opacity-50 w-full z-50 max-w-[200px] lg:max-w-[1200px] py-12 lg:py-0"
             >
                 <nuxt-img src="/images/location/clients/client-1.png" />
                 <nuxt-img src="/images/location/clients/client-2.png" />
@@ -361,56 +361,76 @@ console.log(cityInformation);
 
     <!-- DATING PROFILE -->
     <section class="bg-black py-20 px-8">
-        <div class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-[64px] flex justify-between">
+        <div
+            class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-6 lg:px-[64px] flex justify-between flex-col"
+        >
+            <div class="flex flex-col justify-center lg:hidden">
+                <p class="text-primary-500 font-bold">
+                    DATING PHOTOGRAPHY IN {{ cityInformation.city.toUpperCase() }},
+                    {{ cityInformation.state.toUpperCase() }}
+                </p>
+                <h1 class="text-[28px] leading-[32px] tracking-[-3%] font-accent font-bold mt-1">
+                    Transform Your Online Dating Profile
+                </h1>
+                <div class="bg-primary-500 w-[120px] h-[10px] my-8" />
+            </div>
+
             <!-- PHOTOS -->
-            <div class="flex gap-12 items-end">
+            <div class="flex gap-4 lg:gap-12 items-end mb-10 lg:mb-0">
                 <div>
-                    <div class="relative h-[275px] w-[190px]">
+                    <div class="relative max-h-[275px] max-w-[190px] w-full">
                         <nuxt-img src="/images/location/transform-1.png" />
-                        <p class="bg-black text-white font-bold px-[12px] py-[8px] absolute -bottom-2 -left-4">
+                        <p
+                            class="text-[12px] lg:text-[18px] px-1.5 bg-black text-white font-bold lg:px-[12px] lg:py-[8px] absolute -bottom-2 -left-4"
+                        >
                             BEFORE
                         </p>
                     </div>
-                    <ul class="mt-6 list-disc text-gray-500 ml-8">
+                    <ul class="mt-6 list-disc text-gray-500 lg:ml-8 text-[12px] lg:text-[18px]">
                         <li>Few photos</li>
                         <li>Few matches</li>
                         <li>Few dates</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="relative h-[400px] w-[290px]">
+                    <div class="relative max-h-[400px] max-w-[290px] w-full">
                         <nuxt-img src="/images/location/transform-2.png" />
-                        <p class="bg-black text-white font-bold px-[12px] py-[8px] absolute -bottom-2 -left-4">AFTER</p>
+                        <p
+                            class="text-[12px] lg:text-[18px] px-1.5 bg-black text-white font-bold lg:px-[12px] lg:py-[8px] absolute -bottom-2 -left-4"
+                        >
+                            AFTER
+                        </p>
                     </div>
-                    <ul class="mt-6 list-disc text-gray-500 ml-8">
-                        <li>Few photos</li>
-                        <li>Few matches</li>
-                        <li>Few dates</li>
+                    <ul class="mt-6 list-disc text-gray-500 lg:ml-8 text-[12px] lg:text-[18px]">
+                        <li>Feel Confident</li>
+                        <li>Get More Matches</li>
+                        <li>Go On Better Dates</li>
                     </ul>
                 </div>
             </div>
 
             <!-- TEXT -->
             <article class="max-w-[475px] flex flex-col justify-center">
-                <p class="text-primary-500 font-bold">
-                    DATING PHOTOGRAPHY IN {{ cityInformation.city.toUpperCase() }},
-                    {{ cityInformation.state.toUpperCase() }}
-                </p>
+                <div class="hidden lg:flex flex-col justify-center">
+                    <p class="text-primary-500 font-bold">
+                        DATING PHOTOGRAPHY IN {{ cityInformation.city.toUpperCase() }},
+                        {{ cityInformation.state.toUpperCase() }}
+                    </p>
+                    <h1 class="text-[44px] leading-[52px] tracking-[-1.32px] font-accent font-bold mt-1">
+                        Transform Your Online Dating Profile
+                    </h1>
+                    <div class="bg-primary-500 w-[120px] h-[10px] my-8" />
+                </div>
 
-                <h1 class="text-[44px] leading-[52px] tracking-[-1.32px] font-accent font-bold mt-1">
-                    Transform Your Online Dating Profile
-                </h1>
-                <div class="bg-primary-500 w-[120px] h-[10px] my-8" />
-
-                <p class="text-[22px]">"{{ cityInformation.review_1 }}"</p>
-                <p class="mt-8 text-[22px]">- {{ cityInformation.reviewer_1 }}</p>
+                <p class="lg:text-[22px]">"{{ cityInformation.review_1 }}"</p>
+                <p class="mt-8 lg:text-[22px]">- {{ cityInformation.reviewer_1 }}</p>
             </article>
         </div>
 
         <!-- STAND OUT -->
-        <div class="flex justify-between items-center container mx-auto max-w-[1200px] mt-20">
-            <div class="max-w-[475px]">
-                <p class="text-white font-bold text-[32px] leading-[38.4px] font-display">
+        <div class="flex justify-between items-center container mx-auto max-w-[1200px] mt-20 flex-col lg:flex-row">
+            <div class="max-w-[475px] mb-6 lg:mb-0">
+                <p class="text-white font-bold text-[32px] leading-[38.4px] font-display text-center lg:text-left">
                     Stand Out in the Digital Dating Scene
                 </p>
                 <button class="btn btn-primary mt-6 w-full lg:w-auto">
@@ -424,7 +444,7 @@ console.log(cityInformation);
                 </button>
             </div>
 
-            <div class="flex gap-8">
+            <div class="flex flex-col lg:flex-row gap-8">
                 <div class="text-white flex items-center gap-2">
                     <p class="font-bold text-[38px] font-display">1000+</p>
                     <p class="text-[12px]">
@@ -448,13 +468,15 @@ console.log(cityInformation);
     </section>
 
     <!-- ELEVATE -->
-    <section class="bg-[#E5E5E5] py-[180px] overflow-hidden">
-        <div class="container relative flex justify-end">
-            <div class="absolute -top-[220px] -left-[100px]">
+    <section class="bg-[#E5E5E5] lg:py-[180px] overflow-hidden">
+        <div class="container relative flex flex-col lg:flex-row justify-end">
+            <div
+                class="relative lg:absolute top-0 -left-[10%] lg:-top-[220px] lg:-left-[100px] h-[375px] lg:h-auto overflow-hidden"
+            >
                 <nuxt-img src="/images/location/iphone.png" />
             </div>
-            <article class="max-w-[560px] w-full">
-                <h1 class="font-bold text-heading-h2 font-display">
+            <article class="max-w-[560px] w-full p-4">
+                <h1 class="font-bold text-[28px] leading-[33.6px] tracking-[-0.56px] lg:text-heading-h2 font-display">
                     Elevate Your Dating Profile with Professional Dating Photography
                 </h1>
                 <div class="bg-primary-500 w-[120px] h-[10px] my-8" />
@@ -593,8 +615,8 @@ console.log(cityInformation);
 
     <!-- EXPERT GUIDANCE -->
     <section class="bg-black py-[180px] overflow-hidden">
-        <div class="container mx-auto max-w-[1400px] relative flex gap-16">
-            <article class="max-w-[560px] w-full text-white">
+        <div class="container mx-auto max-w-[1400px] relative flex gap-16 flex-col-reverse lg:flex-row">
+            <article class="max-w-[560px] w-full text-white p-8">
                 <h1 class="font-bold text-heading-h2 font-accent">Expert guidance in every step of your photoshoot</h1>
                 <div class="bg-primary-500 w-[120px] h-[10px] my-8" />
                 <p class="text-20px">
@@ -669,7 +691,7 @@ console.log(cityInformation);
                 </button>
             </article>
 
-            <div class="w-[766px] h-[766px]">
+            <div class="max-w-[766px] max-h-[766px]">
                 <nuxt-img src="/images/location/group-image.png" />
             </div>
         </div>
@@ -677,7 +699,7 @@ console.log(cityInformation);
 
     <!-- FAQ -->
     <section class="bg-black">
-        <div class="container mx-auto bg-white py-20 px-10 flex justify-between gap-20">
+        <div class="container mx-auto bg-white py-20 px-10 flex justify-between gap-20 flex-col lg:flex-row">
             <div class="max-w-[400px]">
                 <h1 class="font-accent font-bold text-[54px]">FAQS</h1>
                 <div class="bg-primary-500 w-[120px] h-[10px] my-4" />
@@ -718,7 +740,7 @@ console.log(cityInformation);
 
     <!-- PRE FOOTER -->
     <section class="bg-[#090303] py-20">
-        <div class="container mx-auto flex justify-between items-start px-32">
+        <div class="container mx-auto flex justify-between items-start px-4 lg:px-32 flex-col lg:flex-row">
             <article class="max-w-[560px] w-full text-white">
                 <h1 class="font-bold text-heading-h1 font-accent">
                     Professional Dating Photography in {{ cityInformation.city }}, {{ cityInformation.state }}

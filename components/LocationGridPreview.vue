@@ -1,7 +1,7 @@
 <template>
-    <nuxt-link :to="slug">
+    <nuxt-link :to="slug" class="col-span-4 lg:col-span-1">
         <div
-            class="col-span-4 lg:col-span-1 relative w-[280px] h-[300px] flex p-2 justify-center items-center overflow-hidden rounded-lg border-secondary-300 cursor-pointer"
+            class="relative w-[280px] h-[300px] flex p-2 justify-center items-center overflow-hidden rounded-lg border-secondary-300 cursor-pointer"
         >
             <p
                 class="text-white relative z-20 font-display text-heading-h3 font-bold drop-shadow-[4px_4px_4px_rgba(0,0,0,0.30)]"
