@@ -64,3 +64,13 @@ export const getBlogPost = async (slug: string) => {
         return null;
     }
 };
+
+export const getTestimonials = async () => {
+    try {
+        const res = await butter.content.retrieve(['testimonials']);
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};

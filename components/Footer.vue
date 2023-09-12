@@ -41,12 +41,12 @@ const nav_links =
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">BROWSE</p>
                     <nav class="flex flex-col gap-3">
                         <nuxt-link to="/" :class="nav_links">Home</nuxt-link>
-                        <nuxt-link to="/" :class="nav_links">Blog</nuxt-link>
+                        <nuxt-link to="/blog" :class="nav_links">Blog</nuxt-link>
                         <nuxt-link to="/locations" :class="nav_links">Locations</nuxt-link>
-                        <nuxt-link to="/" :class="nav_links">How it Works</nuxt-link>
-                        <nuxt-link to="/" :class="nav_links">For Women</nuxt-link>
-                        <nuxt-link to="/" :class="nav_links">Book a Spot</nuxt-link>
-                        <nuxt-link to="/" :class="nav_links">Case Studies</nuxt-link>
+                        <nuxt-link to="/how-it-works" :class="nav_links">How it Works</nuxt-link>
+                        <nuxt-link to="/photos-for-women" :class="nav_links">For Women</nuxt-link>
+                        <nuxt-link to="/book-a-spot" :class="nav_links">Book a Spot</nuxt-link>
+                        <nuxt-link to="/case-studies" :class="nav_links">Case Studies</nuxt-link>
                     </nav>
                 </div>
 
