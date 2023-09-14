@@ -50,8 +50,8 @@ useHead({
 
     <!-- MATCH ARTIST TEAM -->
     <section class="bg-black">
-        <div class="container mx-auto py-[98px]">
-            <h2 class="text-white text-heading-h2 font-bold mb-9">The Match Artist Team</h2>
+        <div class="container mx-auto py-[98px] px-4">
+            <h2 class="text-white text-heading-h2 font-bold mb-9 text-center lg:text-left">The Match Artist Team</h2>
             <div class="flex gap-10 overflow-hidden">
                 <Carousel v-bind="settings">
                     <Slide v-for="slide in team" :key="slide.name">

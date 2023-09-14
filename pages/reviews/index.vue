@@ -11,7 +11,7 @@ const reviews = data.value.reviews.data.testimonials;
     <Header />
 
     <div
-        class="py-[150px] relative"
+        class="py-[100px] lg:py-[150px] relative"
         :style="{
             backgroundImage: 'url(/images/assets/ray.jpg)',
             backgroundPosition: 'center',
@@ -19,8 +19,10 @@ const reviews = data.value.reviews.data.testimonials;
             backgroundRepeat: 'no-repeat',
         }"
     >
-        <h1 class="font-light z-10 relative text-[96px] leading-[96px] text-center text-white">Reviews</h1>
-        <p class="text-[26px] z-10 relative text-center tracking-[1px] leading-[44px] text-white">
+        <h1 class="font-light z-10 relative text-[39px] lg:text-[96px] lg:leading-[96px] text-center text-white">
+            Reviews
+        </h1>
+        <p class="text-[18px] lg:text-[26px] z-10 relative text-center tracking-[1px] leading-[44px] text-white">
             Success stories from happy customers
         </p>
 
@@ -29,24 +31,24 @@ const reviews = data.value.reviews.data.testimonials;
 
     <section class="bg-[#171717] py-[50px] px-8">
         <div class="container max-w-[1000px] mx-auto flex flex-col gap-8">
-            <div class="flex flex-row gap-20 text-white relative items-center">
+            <div class="flex flex-col lg:flex-row gap-20 text-white relative items-center">
                 <img src="https://cdn.buttercms.com/rxCNfDQQu9L6DMb1sgW8" class="object-contain" />
                 <LargeQuote
                     quote="I’ve been seeing a girl that[‘s] the most perfect human being for me. [...] the coaching on eye movement + pictures is life changing"
                 />
             </div>
 
-            <div class="flex flex-row-reverse gap-20 text-white relative items-center">
+            <div class="flex flex-col lg:flex-row-reverse gap-20 text-white relative items-center">
                 <img src="https://cdn.buttercms.com/9IOr0R38TAqCKF6gk24V" class="object-contain" />
                 <LargeQuote quote="I met my fiance on a dating site using the photos taken by The Match Arist." />
             </div>
 
-            <div class="flex flex-row gap-20 text-white relative items-center">
+            <div class="flex flex-col lg:flex-row gap-20 text-white relative items-center">
                 <img src="https://cdn.buttercms.com/TBSgAOFmTcOpnkRySU9q" class="object-contain" />
                 <LargeQuote quote="[...] 40 matches so far putting in zero effort!" />
             </div>
 
-            <div class="flex flex-row-reverse gap-20 text-white relative items-center">
+            <div class="flex flex-col lg:flex-row-reverse gap-20 text-white relative items-center">
                 <img src="https://cdn.buttercms.com/AmrxhAJKQVeandJwkQ2G" class="object-contain" />
                 <LargeQuote
                     quote="he knows how to bring out your best. [...] Finding the right partner is one of the most important and exciting challenges you’ll ever face - so investing a bit of time and money in professional photos should be a no-brainer."

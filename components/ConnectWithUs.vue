@@ -34,23 +34,26 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-4 gap-8 items-center">
+        <div class="grid grid-cols-4 gap-8 items-center px-8">
             <a
+                class="col-span-4 lg:col-span-1"
                 href="https://www.theamericanreporter.com/the-number-one-way-to-turn-your-online-dating-profile-around-the-match-artist/"
                 target="_blank"
             >
                 <nuxt-img src="/images/client/footer_logo_1.png" />
             </a>
-            <a href="https://www.entrepreneur.com/article/430103" target="_blank">
+            <a class="col-span-4 lg:col-span-1" href="https://www.entrepreneur.com/article/430103" target="_blank">
                 <nuxt-img src="/images/client/footer_logo_2.png" />
             </a>
             <a
+                class="col-span-4 lg:col-span-1"
                 href="https://nyweekly.com/dating/photos-that-help-you-find-love-introducing-the-match-artist/"
                 target="_blank"
             >
                 <nuxt-img src="/images/client/footer_logo_3.png" />
             </a>
             <a
+                class="col-span-4 lg:col-span-1"
                 href="https://www.morningbrew.com/daily/stories/2023/02/22/inside-jobs-dating-app-photographer-nick-friesen"
                 target="_blank"
             >

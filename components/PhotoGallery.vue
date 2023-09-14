@@ -1,10 +1,10 @@
 <template>
     <div class="mosaic-gallery flex-col">
         <div
-            class="h-[500px] w-full overflow-hidden bg-cover relative flex justify-center items-center"
+            class="h-[250px] lg:h-[500px] w-full overflow-hidden bg-cover relative flex justify-center items-center"
             v-bind:style="{ backgroundImage: 'url(' + bannerImage + ')' }"
         >
-            <p class="text-white text-[96px] relative z-10 font-light">{{ galleryName }}</p>
+            <p class="text-white text-[39px] lg:text-[96px] relative z-10 font-light">{{ galleryName }}</p>
             <div class="bg-black bg-opacity-50 absolute w-full h-full top-0 left-0" />
         </div>
         <span class="gallery-titles mb-8">

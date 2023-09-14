@@ -35,7 +35,7 @@ const bannerImage = gallery.fields.banner_image;
 <template>
     <Header />
 
-    <section class="flex w-full gap-4">
+    <section class="flex w-full relative">
         <!-- SIDE NAV -->
         <side-nav-old :links="links" />
 

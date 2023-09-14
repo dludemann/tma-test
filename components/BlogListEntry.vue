@@ -15,8 +15,8 @@ const date = dayjs(props.created).format('MMM DD');
 </script>
 
 <template>
-    <div class="grid grid-cols-2 gap-5 items-center">
-        <div class="h-[600px] w-full relative">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
+        <div class="h-[300px] lg:h-[600px] w-full relative">
             <img :src="props.img" class="object-cover w-full h-full" />
         </div>
         <article class="p-[70px] flex flex-col items-start">
