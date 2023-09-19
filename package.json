@@ -21,6 +21,7 @@
         "axios": "^1.4.0",
         "buttercms": "^1.2.12",
         "dayjs": "^1.11.9",
+        "he": "^1.2.0",
         "slugify": "^1.6.6",
         "v-lazy-image": "^2.1.1",
         "vue-lite-youtube-embed": "^1.2.0",

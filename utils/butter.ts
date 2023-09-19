@@ -74,3 +74,23 @@ export const getTestimonials = async () => {
         return null;
     }
 };
+
+export const getSilos = async () => {
+    try {
+        const res = await butter.page.list('algorithm-silos');
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const getSiloBySlug = async (slug?: any) => {
+    try {
+        const res = await butter.page.retrieve('algorithm-silos', slug);
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
