@@ -130,6 +130,7 @@ const menuData = silo.fields.level_one_subject.map((l_one) => {
     };
 });
 const currentPath = initData(mainSlug, secondSlug);
+
 loaded.value = true;
 </script>
 
@@ -149,9 +150,11 @@ loaded.value = true;
         <div class="w-full">
             <article class="w-full max-w-[800px] px-16">
                 <header class="pt-[50px] mb-8">
-                    <p class="font-display text-[18px] font-bold text-[#171717]">TINDER BASICS</p>
+                    <p class="font-display text-[18px] font-bold text-[#171717] uppercase">
+                        {{ silo.fields.level_one_subject[currentPath.level_one].fields.level_one_title }}
+                    </p>
                     <h1 class="text-[50px] font-bold font-display py-2 leading-[60px] text-[#1E293B]">
-                        How to Use Tinder for Free (2023 Expert's Guide)
+                        {{ currentPath.level_two.level_two_title }}
                     </h1>
                     <div class="flex gap-2 items-center mb-4">
                         <div class="w-6 h-6 rounded-full bg-gray-400"></div>
