@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue';
 import * as he from 'he';
+import { ref } from 'vue';
 const route = useRoute();
 
 // ============================================================================
@@ -40,7 +40,6 @@ const parseLevelThree = (html_string) => {
 };
 
 const changeCurrentHash = (slug) => {
-    console.log('slug', slug);
     currentHash.value = slug;
 };
 
@@ -68,8 +67,6 @@ const findLevelOneIndex = () => {
 
 const findLevelTwo = (levelOneIndex, slug) => {
     const L2 = silo.fields.level_one_subject[levelOneIndex].fields.level_two;
-
-    console.log('L2', L2);
     const object = L2.find((level) => level.level_two_slug === slug);
     return object;
 };
