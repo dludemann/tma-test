@@ -11,7 +11,7 @@ import { team } from '../../configs/team';
         <!-- GRID -->
         <div class="grid grid-cols-2 gap-16">
             <!-- TEAM MEMBER -->
-            <div v-for="member in team" :key="member.name" class="col-span-2 lg:col-span-1 text-center">
+            <div v-for="member in team" :key="member.name" class="col-span-2 lg:col-span-1 text-center overflow-hidden">
                 <div class="h-auto lg:h-[510px] w-full lg:w-[510px] bg-slate-500 overflow-hidden">
                     <nuxt-img :src="member.img" />
                 </div>

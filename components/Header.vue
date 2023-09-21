@@ -1,13 +1,51 @@
 <script setup lang="ts">
 const mobileMenuOpen = ref(false);
+const mobileMenuCategoryOpen = ref<string | null>(null);
 
-const nav_links = 'text-white text-[14px] leading-[21px] font-display hover:text-primary-700 active:text-primary-700';
+const nav_links = 'text-white text-[14px] leading-[21px] font-display relative group py-2';
 const m_links = 'text-white text-[22px] leading-[33px] font-display hover:text-primary-700 active:text-primary-700';
 
+const toggleMobileCategory = (category: string) => {
+    if (mobileMenuCategoryOpen.value === category) {
+        mobileMenuCategoryOpen.value = null;
+    } else {
+        mobileMenuCategoryOpen.value = category;
+    }
+};
 const links = [
     {
         label: 'Portfolio',
-        link: '/portfolio',
+        link: null,
+        children: [
+            {
+                label: 'General',
+                link: '/portfolio',
+            },
+            {
+                label: 'Action',
+                link: '/portfolio/action-gallery',
+            },
+            {
+                label: 'Headshots',
+                link: '/portfolio/headshots-gallery',
+            },
+            {
+                label: 'Coffee',
+                link: '/portfolio/coffee-gallery',
+            },
+            {
+                label: 'Night Out',
+                link: '/portfolio/night-out',
+            },
+            {
+                label: 'Dogs',
+                link: '/portfolio/dogs',
+            },
+            {
+                label: 'Before & After',
+                link: '/portfolio/before-and-after-collection',
+            },
+        ],
     },
     {
         label: 'Team',
@@ -31,7 +69,49 @@ const links = [
     },
     {
         label: 'Book A Call',
-        link: '/book-a-call',
+        link: null,
+        children: [
+            {
+                label: 'Austin',
+                link: '/location/austin-dating-photography',
+            },
+            {
+                label: 'Dallas',
+                link: '/location/dallas-dating-photography',
+            },
+            {
+                label: 'Houston',
+                link: '/location/houston-dating-photography',
+            },
+            {
+                label: 'Minneapolis',
+                link: '/location/minneapolis-dating-photography',
+            },
+            {
+                label: 'Chicago',
+                link: '/location/chicago-dating-photography',
+            },
+            {
+                label: 'San Francisco',
+                link: '/location/san-francisco-dating-photography',
+            },
+            {
+                label: 'Seattle',
+                link: '/location/seattle-dating-photography',
+            },
+            {
+                label: 'Los Angeles',
+                link: '/location/los-angeles-dating-photography',
+            },
+            {
+                label: 'New York City',
+                link: '/location/new-york-city-dating-photography',
+            },
+            {
+                label: 'Other',
+                link: '/online-dating-photographer-near-me',
+            },
+        ],
     },
 ];
 </script>
@@ -63,7 +143,32 @@ const links = [
 
             <!-- URLS -->
             <nav class="hidden lg:flex gap-6">
-                <a v-for="link in links" :key="link.link" :href="link.link" :class="nav_links">{{ link.label }}</a>
+                <div v-for="link in links" :key="link.label" :class="nav_links">
+                    <span v-if="link.children" class="hover:text-primary-700 active:text-primary-700 cursor-pointer">{{
+                        link.label
+                    }}</span>
+                    <a
+                        v-if="link.link"
+                        :href="link.link"
+                        class="hover:text-primary-700 active:text-primary-700 cursor-pointer"
+                        >{{ link.label }}</a
+                    >
+
+                    <div
+                        v-if="link?.children"
+                        class="absolute bg-white border top-full right-0 flex-col w-[145px] overflow-hidden rounded text-left font-semibold overflow-hidden hidden group-hover:flex z-50"
+                    >
+                        <a
+                            :href="child.link"
+                            v-for="child in link.children"
+                            :key="child.label"
+                            class="text-black cursor-pointer hover:bg-gray-100 py-2.5 px-3"
+                        >
+                            {{ child.label }}
+                        </a>
+                    </div>
+                </div>
+                <!-- <a v-for="link in links" :key="link.label" :href="link.link" :class="nav_links">{{ link.label }}</a> -->
             </nav>
 
             <!-- HAMBURGER MENU -->
@@ -83,7 +188,23 @@ const links = [
         <!-- MOBILE MENU -->
         <div class="bg-black h-[calc(100vh-60px)] w-full fixed z-50" v-if="mobileMenuOpen">
             <nav class="flex flex-col gap-4 container mx-auto py-6 px-8">
-                <a v-for="link in links" :key="link.link" :href="link.link" :class="m_links">{{ link.label }}</a>
+                <div v-for="link in links" :key="link.label">
+                    <a v-if="link.link" :href="link.link" :class="m_links">{{ link.label }}</a>
+                    <span v-if="link.children" :class="m_links" @click="toggleMobileCategory(link.label)">{{
+                        link.label
+                    }}</span>
+
+                    <div class="flex flex-col px-4" v-if="mobileMenuCategoryOpen === link.label">
+                        <a
+                            @click="mobileMenuCategoryOpen = null"
+                            v-for="child in link.children"
+                            :href="child.link"
+                            :key="child.link"
+                            class="text-white py-2"
+                            >{{ child.label }}</a
+                        >
+                    </div>
+                </div>
             </nav>
         </div>
     </header>

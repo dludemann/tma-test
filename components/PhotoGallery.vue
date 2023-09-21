@@ -11,8 +11,8 @@
             <h5 class="font-bold text-[20px]">{{ galleryName }}</h5>
             <subtitle> The Match Artist</subtitle>
         </span>
-        <div class="masonry-with-columns">
-            <div v-for="indexCol in columns" :key="indexCol" class="column">
+        <div class="masonry-with-columns w-full">
+            <div v-for="indexCol in columns" :key="indexCol" class="column w-1/2 lg:w-1/3">
                 <div
                     v-for="(image, index) in columnsArray[indexCol - 1]"
                     :key="`${index}-${indexCol - 1}`"
@@ -89,7 +89,6 @@ export default {
     },
     methods: {
         onImageClick(index, indexCol) {
-            console.log('HELLO');
             const subArrayIndex = indexCol - 1;
             const subArraySize = Math.floor(this.images.length / this.columns);
             const remainder = this.images.length % this.columns;

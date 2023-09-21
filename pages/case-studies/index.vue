@@ -246,25 +246,6 @@ const studies: StudyObject[] = [
         </div>
     </section>
 
-    <section class="max-w-[800px] mx-auto flex flex-col gap-4 text-center">
-        <h1 class="text-center font-bold text-[39px]">Book a Call with a Photographer</h1>
-        <p class="text-[18px]">
-            Want to chat with one of our photographers? Book a free strategy session with us to figure out how we can
-            help you with your online dating.
-        </p>
-
-        <a
-            href="https://bookme.name/thematchartist/lite/free-consultation-with-shane"
-            class="text-[#bf9441] hover:underline"
-            >Chat With Us</a
-        >
-
-        <p>
-            For our collection of even more text, google, and email reviews, check them out
-            <nuxt-link to="/reviews" class="text-[#bf9441] hover:underline">here.</nuxt-link>
-        </p>
-    </section>
-
     <ConnectWithUs />
     <Footer />
 </template>
