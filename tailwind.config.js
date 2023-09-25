@@ -94,7 +94,6 @@ module.exports = {
             fontFamily: {
                 display: ['Montserrat'],
                 body: ['IBM Plex Sans'],
-                accent: ['Inria Serif'],
                 sans: ['IBM Plex Sans'],
             },
         },

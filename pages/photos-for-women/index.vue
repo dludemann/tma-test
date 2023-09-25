@@ -45,7 +45,7 @@ const largeQuote2 = {
 
     <!-- RESULT -->
     <div class="grid grid-cols-2 items-center bg-[#171717] text-white">
-        <div class="h-[500px] w-full relative">
+        <div class="h-[800px] w-full relative">
             <img src="https://cdn.buttercms.com/ixgX23g2QQqVvm3zHAeZ" class="object-cover w-full h-full" />
         </div>
         <article class="p-[70px] flex flex-col items-start">
@@ -81,7 +81,7 @@ const largeQuote2 = {
                 <li class="text-[20px]">We'll shoot with you for 4-5 hours resulting in 200-300 edited photos.</li>
             </ul>
         </article>
-        <div class="h-[500px] w-full relative">
+        <div class="h-[800px] w-full relative">
             <img src="https://cdn.buttercms.com/ffytEyAKRyGhhIMhFghU" class="object-cover w-full h-full" />
         </div>
     </div>

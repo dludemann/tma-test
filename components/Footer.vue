@@ -19,7 +19,7 @@ const nav_links =
 <template>
     <footer class="bg-secondary-900">
         <!-- TOP SECTION -->
-        <section class="container mx-auto flex flex-col lg:flex-row justify-between py-16 gap-8">
+        <section class="container mx-auto flex flex-col lg:flex-row py-16 gap-8 overflow-hidden justify-between">
             <!-- LOGO SECTION -->
             <div class="w-full lg:max-w-[300px] flex flex-col px-6 lg:px-0 items-center lg:items-start">
                 <!-- LOGO -->
@@ -48,9 +48,9 @@ const nav_links =
             </div>
 
             <!-- URLS -->
-            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 flex-shrink-0">
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 flex-shrink-0">
                 <!-- BROWSER COLUMN -->
-                <div class="w-full max-w-[200px] flex flex-col gap-4 flex-shrink-0">
+                <div class="w-full lg:w-[200px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">BROWSE</p>
                     <nav class="flex flex-col gap-3">
                         <nuxt-link to="/" :class="nav_links">Home</nuxt-link>
@@ -60,11 +60,12 @@ const nav_links =
                         <nuxt-link to="/photos-for-women" :class="nav_links">For Women</nuxt-link>
                         <nuxt-link to="/book-a-spot" :class="nav_links">Book a Spot</nuxt-link>
                         <nuxt-link to="/case-studies" :class="nav_links">Case Studies</nuxt-link>
+                        <nuxt-link to="/press" :class="nav_links">Press</nuxt-link>
                     </nav>
                 </div>
 
                 <!-- BROWSER COLUMN -->
-                <div class="w-full max-w-[200px] flex flex-col gap-4 flex-shrink-0">
+                <div class="w-full lg:w-[200px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">
                         DATING APP ALGORITHMS
                     </p>
@@ -76,7 +77,7 @@ const nav_links =
                 </div>
 
                 <!-- BROWSER COLUMN -->
-                <div class="w-full max-w-[200px] flex flex-col gap-4 flex-shrink-0">
+                <div class="w-full lg:w-[250px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">CONTACT US</p>
                     <nav class="flex flex-col gap-3">
                         <a href="#" :class="nav_links">
@@ -127,6 +128,42 @@ const nav_links =
                             info@thematchartist.com</a
                         >
                     </nav>
+                </div>
+
+                <!-- ONLINE DATING TOOLS -->
+                <div class="w-full lg:w-[300px] flex flex-col gap-4 flex-shrink-0 px-6">
+                    <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">
+                        ONLINE DATING TOOLS
+                    </p>
+                    <p class="text-[#EAECF0] font-body text-body-small text-center lg:text-left">
+                        Sign up for The Match Artist newsletter to receive free online dating tools.
+                    </p>
+
+                    <form class="flex flex-col gap-4">
+                        <fieldset class="flex flex-col">
+                            <input placeholder="Email" class="input" />
+                        </fieldset>
+
+                        <fieldset class="flex flex-col">
+                            <input placeholder="First Name" class="input" />
+                        </fieldset>
+
+                        <button class="btn btn-primary lg:w-auto">
+                            Sign Up
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M14 4.92969L12.5 6.42969L17.0703 11H3V13H17.0703L12.5 17.5703L14 19.0703L21.0703 12L14 4.92969Z"
+                                    fill="white"
+                                />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>

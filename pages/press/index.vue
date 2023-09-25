@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { useHead } from 'nuxt/app';
 import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import { team } from '../configs/team';
+import { team } from '../../configs/team';
 
 const settings = {
     itemsToShow: 6,

@@ -233,7 +233,7 @@ const studies: StudyObject[] = [
 
                 <div class="flex flex-col gap-4 py-10">
                     <div v-for="image in study.infoSection.images" :key="image">
-                        <nuxt-img :src="image" />
+                        <img :src="image" />
                     </div>
                 </div>
             </article>
@@ -241,7 +241,7 @@ const studies: StudyObject[] = [
             <!-- BEFORE + AFTER -->
             <div v-if="study.beforeAfter" class="mx-auto max-w-[800px] flex flex-col items-center">
                 <p class="text-center font-bold mb-4">Before + After</p>
-                <nuxt-img :src="study.beforeAfter" />
+                <img :src="study.beforeAfter" />
             </div>
         </div>
     </section>

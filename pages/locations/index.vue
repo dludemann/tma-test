@@ -7,8 +7,14 @@ const { data, error } = await useAsyncData('locations', async () => {
     return { locations };
 });
 
-const locations = data.value.locations.data.locations;
-const filteredLocations = computed(() => locations.filter((location) => location.city.includes(search.value)));
+const locations = data.value.locations.data.locations.map((location) => ({
+    ...location,
+    cityFilter: location.city.toLowerCase(),
+}));
+
+const filteredLocations = computed(() =>
+    locations.filter((location) => location.cityFilter.includes(search.value.toLowerCase())),
+);
 </script>
 
 <template>
