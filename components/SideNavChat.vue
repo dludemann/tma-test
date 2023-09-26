@@ -8,7 +8,7 @@
         </button>
         <nav class="left-nav" :class="{ showMenu: breakpointToggle }" style="background: white" @click="closeMenu">
             <div>
-                <ul class="left-nav__root showMenu__root bg-[#F9F9F9]">
+                <ul class="left-nav__root showMenu__root bg-[#faf4e5]">
                     <li>
                         <h5 class="bg-[#990808] p-4 font-display text-white font-bold text-[18px]">
                             {{ pageData.fields.page_title }}
