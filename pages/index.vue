@@ -48,8 +48,8 @@
     <!-- BETTER DATES -->
     <section class="bg-[#171717] px-4">
         <div class="container mx-auto flex flex-col lg:flex-row gap-8 py-16 x-8 max-w-[1040px]">
-            <section>
-                <div className="flex gap-4">
+            <section class="flex flex-col flex-shrink-0">
+                <div class="flex flex-col lg:flex-row gap-4">
                     <div class="flex flex-col overflow-hidden justify-center gap-2 items-center">
                         <p class="text-white font-medium text-[18px]">Before</p>
                         <div class="w-[245px] h-[245px] bg-gray-400">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-4 mt-4">
+                <div class="flex flex-col lg:flex-row gap-4 mt-4">
                     <div class="flex flex-col overflow-hidden justify-center gap-2 items-center">
                         <p class="text-white font-medium text-[18px]">Before</p>
                         <div class="w-[245px] h-[245px] bg-gray-400">
@@ -112,8 +112,8 @@
                 </p>
             </div>
 
-            <section>
-                <div className="flex gap-4">
+            <section class="flex-col">
+                <div class="flex flex-col lg:flex-row gap-4">
                     <div class="flex flex-col overflow-hidden justify-center gap-2 items-center">
                         <p class="text-white font-medium text-[18px]">Before</p>
                         <div class="w-[245px] h-[245px] bg-gray-400">
@@ -133,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-4 mt-4">
+                <div class="flex flex-col lg:flex-row gap-4 mt-4">
                     <div class="flex flex-col overflow-hidden justify-center gap-2 items-center">
                         <p class="text-white font-medium text-[18px]">Before</p>
                         <div class="w-[245px] h-[245px] bg-gray-400">
