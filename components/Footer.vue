@@ -80,7 +80,7 @@ const nav_links =
                 <div class="w-full lg:w-[250px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">CONTACT US</p>
                     <nav class="flex flex-col gap-3">
-                        <a href="#" :class="nav_links">
+                        <p :class="nav_links">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg
                                     width="24"
@@ -105,9 +105,9 @@ const nav_links =
                                     />
                                 </svg>
                             </div>
-                            Austin, TX 78701</a
-                        >
-                        <a href="#" :class="nav_links">
+                            Austin, TX 78701
+                        </p>
+                        <a href="mailto:info@thematchartist.com" :class="nav_links">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg
                                     width="24"
