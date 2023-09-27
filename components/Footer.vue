@@ -125,8 +125,8 @@ const nav_links =
                                     />
                                 </svg>
                             </div>
-                            info@thematchartist.com</a
-                        >
+                            info@thematchartist.com
+                            </a>
                     </nav>
                 </div>
 

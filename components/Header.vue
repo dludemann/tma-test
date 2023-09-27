@@ -74,39 +74,39 @@ const links = [
         children: [
             {
                 label: 'Austin',
-                link: '/locations/austin-dating-photography',
+                link: '/austin-dating-photography',
             },
             {
                 label: 'Dallas',
-                link: '/locations/dallas-dating-photography',
+                link: '/dallas-dating-photography',
             },
             {
                 label: 'Houston',
-                link: '/locations/houston-dating-photography',
+                link: '/houston-dating-photography',
             },
             {
                 label: 'Minneapolis',
-                link: '/locations/minneapolis-dating-photography',
+                link: '/minneapolis-dating-photography',
             },
             {
                 label: 'Chicago',
-                link: '/locations/chicago-dating-photography',
+                link: '/chicago-dating-photography',
             },
             {
                 label: 'San Francisco',
-                link: '/locations/san-francisco-dating-photography',
+                link: '/san-francisco-dating-photography',
             },
             {
                 label: 'Seattle',
-                link: '/locations/seattle-dating-photography',
+                link: '/seattle-dating-photography',
             },
             {
                 label: 'Los Angeles',
-                link: '/locations/los-angeles-dating-photography',
+                link: '/los-angeles-dating-photography',
             },
             {
                 label: 'New York City',
-                link: '/locations/new-york-city-dating-photography',
+                link: '/new-york-city-dating-photography',
             },
             {
                 label: 'Other',

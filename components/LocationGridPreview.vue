@@ -24,7 +24,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const slug = `/locations/${slugify(`${props.city}-dating-photography`, {
+const slug = `/${slugify(`${props.city}-dating-photography`, {
     lower: true,
 })}`;
 </script>

@@ -8,7 +8,7 @@ const settings = {
     itemsToShow: 4,
 };
 
-let city = route.params.slug
+let city = route.params.dynamic_page
     ?.replace('-dating-photography', '')
     .split('-')
     .map((token) => capitalizeFirstLetter(token))
@@ -95,7 +95,7 @@ console.log(cityInformation);
             background: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(' + cityInformation.image + ')',
         }"
     >
-        <article class="container mx-auto text-center max-w-[800px]">
+        <article class="container mx-auto text-center max-w-[800px] mb-16">
             <p class="text-[#A6A6A6] font-bold mb-4">
                 DATING PHOTOGRAPHY IN {{ cityInformation.city.toUpperCase() }},
                 {{ cityInformation.state.toUpperCase() }}
@@ -110,7 +110,7 @@ console.log(cityInformation);
         </article>
 
         <!-- TABS -->
-        <div class="container mx-auto flex gap-4 justify-center my-[70px] overflow-hidden">
+        <!-- <div class="container mx-auto flex gap-4 justify-center my-[70px] overflow-hidden">
             <button :class="pillClass">
                 <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_2831_5704)">
@@ -190,7 +190,7 @@ console.log(cityInformation);
 
                 Dogs
             </button>
-        </div>
+        </div> -->
 
         <!-- IMAGE SLIDER -->
         <section class="container mx-auto overflow-hidden">
@@ -362,7 +362,7 @@ console.log(cityInformation);
     <!-- DATING PROFILE -->
     <section class="bg-black py-20 px-8">
         <div
-            class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-6 lg:px-[64px] flex justify-between flex-col"
+            class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-6 lg:px-[64px] flex justify-between flex-col lg:flex-row"
         >
             <div class="flex flex-col justify-center lg:hidden">
                 <p class="text-primary-500 font-bold">
@@ -469,11 +469,13 @@ console.log(cityInformation);
 
     <!-- ELEVATE -->
     <section class="bg-[#E5E5E5] lg:py-[180px] overflow-hidden">
-        <div class="container relative flex flex-col lg:flex-row justify-end">
-            <div
-                class="relative lg:absolute top-0 -left-[10%] lg:-top-[220px] lg:-left-[100px] h-[375px] lg:h-auto overflow-hidden"
-            >
-                <nuxt-img src="/images/location/iphone.png" />
+        <div class="container mx-auto relative flex flex-col gap-8 lg:flex-row justify-end">
+            <div class="h-[350px] lg:h-auto w-full relative mb-8">
+                <div
+                    class="relative lg:absolute w-[200px] lg:w-auto top-[50px] lg:top-0 h-full lg:h-auto overflow-hidden -right-1/4 lg:right-1/4"
+                >
+                    <nuxt-img src="/images/mockup.svg" />
+                </div>
             </div>
             <article class="max-w-[560px] w-full p-4">
                 <h1 class="font-bold text-[28px] leading-[33.6px] tracking-[-0.56px] lg:text-heading-h2 font-display">
