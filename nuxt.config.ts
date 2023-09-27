@@ -27,7 +27,7 @@ export default defineNuxtConfig({
             // Generate Dynamic Locations
             const locations = await butter.content.retrieve(['locations']);
             const locationSlugs = locations.data?.data.locations.map((location) => {
-                return `/locations/${slugify(`${location.city}-dating-photography`, {
+                return `/${slugify(`${location.city}-dating-photography`, {
                     lower: true,
                 })}`;
             });

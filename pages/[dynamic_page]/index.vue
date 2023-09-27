@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute } from 'nuxt/app';
+import { ref } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 const route = useRoute();
@@ -36,7 +37,8 @@ const imageGallery = [
     '/images/location/samples/headshot-5.png',
 ];
 
-console.log(cityInformation);
+let inquireForm = ref(null);
+const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
 </script>
 
 <template>
@@ -55,7 +57,7 @@ console.log(cityInformation);
                     {{ cityInformation.state }}.
                 </p>
 
-                <button class="btn btn-primary mt-6 w-full lg:w-auto">
+                <button class="btn btn-primary mt-6 w-full lg:w-auto" @click="scrollToBook">
                     Book a Call
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -433,7 +435,7 @@ console.log(cityInformation);
                 <p class="text-white font-bold text-[32px] leading-[38.4px] font-display text-center lg:text-left">
                     Stand Out in the Digital Dating Scene
                 </p>
-                <button class="btn btn-primary mt-6 w-full lg:w-auto">
+                <button class="btn btn-primary mt-6 w-full lg:w-auto" @click="scrollToBook">
                     Book a call
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -602,7 +604,7 @@ console.log(cityInformation);
                     </div>
                 </div>
 
-                <button class="btn btn-primary mt-6 w-full lg:w-auto">
+                <button class="btn btn-primary mt-6 w-full lg:w-auto" @click="scrollToBook">
                     Book a call
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -682,7 +684,7 @@ console.log(cityInformation);
                     </div>
                 </div>
 
-                <button class="btn btn-primary mt-6 w-full lg:w-auto">
+                <button class="btn btn-primary mt-6 w-full lg:w-auto" @click="scrollToBook">
                     Book a call
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -743,7 +745,7 @@ console.log(cityInformation);
     <!-- PRE FOOTER -->
     <section class="bg-[#090303] py-20">
         <div class="container mx-auto flex justify-between items-start px-4 lg:px-32 flex-col lg:flex-row">
-            <article class="max-w-[560px] w-full text-white">
+            <article class="max-w-[560px] w-full text-white" id="inquire-now" ref="inquireForm">
                 <h1 class="font-bold text-heading-h1 font-accent">
                     Professional Dating Photography in {{ cityInformation.city }}, {{ cityInformation.state }}
                 </h1>
