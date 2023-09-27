@@ -12,6 +12,7 @@ const toggleMobileCategory = (category: string) => {
         mobileMenuCategoryOpen.value = category;
     }
 };
+
 const links = [
     {
         label: 'Portfolio',

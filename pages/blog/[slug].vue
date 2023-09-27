@@ -88,15 +88,15 @@ const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rou
                 <div class="w-[800px] h-[500px] mb-[20px]">
                     <img :src="post.featured_image" class="object-cover w-full h-full" />
                 </div>
-                <p class="text-center text-[20px] text-[#787878]">{{ blogDate }}</p>
-                <h1 class="font-bold text-center text-[#171717] text-[48px] leading-[62.5px] mb-[50px]">
+                <p class="text-center text-[20px] text-[#787878] px-6">{{ blogDate }}</p>
+                <h1 class="font-bold text-center text-[#171717] text-[48px] leading-[62.5px] mb-[50px] px-6">
                     {{ post.title }}
                 </h1>
-                <p class="text-[22px] font-medium leading-[37.4px] text-[#787878]">{{ post.summary }}</p>
+                <p class="text-[22px] font-medium leading-[37.4px] text-[#787878] px-6">{{ post.summary }}</p>
             </div>
         </section>
 
-        <div class="max-w-[800px] mx-auto py-[70px] body-container">
+        <div class="max-w-[800px] mx-auto py-[70px] body-container px-6">
             <div v-html="post.body" />
         </div>
     </div>

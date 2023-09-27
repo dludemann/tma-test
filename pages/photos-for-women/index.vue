@@ -36,7 +36,7 @@ const largeQuote2 = {
     </div>
 
     <section>
-        <p class="max-w-[800px] mx-auto text-[18px] py-[50px]">
+        <p class="max-w-[800px] mx-auto text-[18px] py-[50px] px-6">
             Your photos are the core of your profile. We help you take the best pictures possible. Having the photos
             professionally taken is only part of the process. We also help you learn how to look and pose so you can
             look better in future photos.
@@ -44,7 +44,7 @@ const largeQuote2 = {
     </section>
 
     <!-- RESULT -->
-    <div class="grid grid-cols-2 items-center bg-[#171717] text-white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center bg-[#171717] text-white">
         <div class="h-[800px] w-full relative">
             <img src="https://cdn.buttercms.com/ixgX23g2QQqVvm3zHAeZ" class="object-cover w-full h-full" />
         </div>
@@ -64,7 +64,7 @@ const largeQuote2 = {
     <LargeQuote v-bind="largeQuote1" />
 
     <!-- INCLUDED -->
-    <div class="grid grid-cols-2 items-center bg-[#171717] text-white">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center bg-[#171717] text-white">
         <article class="p-[70px] flex flex-col items-start">
             <h1 class="font-bold text-[39px] tracking-[0.252px] leading-[40px] mx-auto border-b-[3px] pb-1 mb-[2.2rem]">
                 How it works
@@ -87,7 +87,7 @@ const largeQuote2 = {
     </div>
 
     <section>
-        <p class="max-w-[800px] mx-auto text-[18px] py-[50px]">
+        <p class="max-w-[800px] mx-auto text-[18px] py-[50px] px-6">
             We are based in Austin, Dallas, Chicago, NY, and LA, however, we frequently shoot in 30+ cities per month.
             We occasionally visit other cities, please fill out the contact form and we will let you know when we are in
             a location near you.
@@ -126,7 +126,7 @@ const largeQuote2 = {
         </button>
     </div>
 
-    <div class="max-w-[900px] mx-auto text-center mt-4">
+    <div class="max-w-[900px] mx-auto text-center mt-4 px-6">
         <p>
             Each session includes coaching on posing and facial expressions to help you look better in both photos and
             real life. You’ll receive a booklet with advice about how to use your photos online, how to open women

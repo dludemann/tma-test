@@ -179,7 +179,7 @@ const studies: StudyObject[] = [
             <div class="h-px w-[10px] bg-[#171717]" />
         </div>
         <h1 class="mb-[40px] text-[39px] font-bold">Case Studies</h1>
-        <p class="text-[18px]">
+        <p class="text-[18px] px-6">
             It might be hard to believe that we can get the results for our clients that we claim, so we've put together
             some specific results driven case studies to show the life change with new photos.
         </p>
@@ -187,7 +187,7 @@ const studies: StudyObject[] = [
 
     <!-- LOOP -->
     <section>
-        <div v-for="study in studies" :key="study.firstName">
+        <div v-for="study in studies" :key="study.firstName" class="px-6">
             <!-- TITLE -->
             <div
                 class="py-[150px] relative my-[50px]"

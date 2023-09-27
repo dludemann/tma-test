@@ -13,13 +13,13 @@ const silos = data.value.silos.data.reverse().map((silo) => {
 });
 
 const nav_links =
-    'text-white text-[16px] leading-[120%] font-medium tracking-[-0.32px] font-display py-1 flex gap-2 items-center justify-center lg:justify-start text-center lg:text-left';
+    'text-white text-[16px] leading-[120%] font-medium tracking-[-0.32px] font-display py-1 flex gap-2 items-center justify-center lg:justify-start text-center lg:text-left hover:text-primary-700';
 </script>
 
 <template>
     <footer class="bg-secondary-900">
         <!-- TOP SECTION -->
-        <section class="container mx-auto flex flex-col lg:flex-row py-16 gap-8 overflow-hidden justify-between">
+        <section class="container mx-auto flex flex-col lg:flex-row py-16 gap-8 overflow-hidden justify-between px-8">
             <!-- LOGO SECTION -->
             <div class="w-full lg:max-w-[300px] flex flex-col px-6 lg:px-0 items-center lg:items-start">
                 <!-- LOGO -->
@@ -50,7 +50,7 @@ const nav_links =
             <!-- URLS -->
             <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 flex-shrink-0">
                 <!-- BROWSER COLUMN -->
-                <div class="w-full lg:w-[200px] flex flex-col gap-4 flex-shrink-0">
+                <div class="w-full lg:w-[140px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">BROWSE</p>
                     <nav class="flex flex-col gap-3">
                         <nuxt-link to="/" :class="nav_links">Home</nuxt-link>

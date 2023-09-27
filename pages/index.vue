@@ -7,6 +7,7 @@
             backgroundImage: 'url(https://cdn.buttercms.com/sPhdWx9SQWaM5cReCMkv)',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
         }"
     >
         <p class="text-[26px] z-10 relative text-center tracking-[1px] leading-[44px] text-white">The Match Artist</p>
