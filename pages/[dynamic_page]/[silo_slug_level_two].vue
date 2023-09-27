@@ -1,4 +1,5 @@
 <script setup>
+import { decode } from 'html-entities';
 import { ref } from 'vue';
 const route = useRoute();
 
@@ -10,11 +11,13 @@ const slugify = (name) => {
 };
 
 const cleanTitle = (string) => {
-    return string
-        .replaceAll('<span>', '')
-        .replaceAll('</span>', '')
-        .replace(/<h2[^>]*./, '')
-        .replace('</h2>', '');
+    return decode(
+        string
+            .replaceAll('<span>', '')
+            .replaceAll('</span>', '')
+            .replace(/<h2[^>]*./, '')
+            .replace('</h2>', ''),
+    );
 };
 
 const parseLevelThree = (html_string) => {
