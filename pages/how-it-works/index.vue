@@ -1,3 +1,8 @@
+<script setup>
+useHead({
+    title: 'How it Works',
+});
+</script>
 <template>
     <Header />
 

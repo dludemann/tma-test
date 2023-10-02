@@ -30,6 +30,10 @@ links = data.value.galleryList.data.map((page) => {
 const gallery = data.value.galleryList.data.filter((gallery) => gallery.slug === 'portfolio')[0];
 const galleryName = gallery.fields.gallery_name;
 const bannerImage = gallery.fields.banner_image;
+
+useHead({
+    title: "The Match Artist's Portfolio",
+});
 </script>
 
 <template>

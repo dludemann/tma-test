@@ -131,7 +131,7 @@ const nav_links =
                 </div>
 
                 <!-- ONLINE DATING TOOLS -->
-                <div class="w-full lg:w-[300px] flex flex-col gap-4 flex-shrink-0 px-6">
+                <div class="flex-1 flex flex-col gap-4 px-6 overflow-hidden w-full">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">
                         ONLINE DATING TOOLS
                     </p>

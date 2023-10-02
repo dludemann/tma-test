@@ -15,6 +15,10 @@ const largeQuote2 = {
     quote: "Before getting my pictures done with The Match Artist, I had been getting matches with women who are 5/10 off of Tinder. After getting my pictures done, I've been getting matches with women who are 10/10. This changes everything. I recommend this company if you are looking to get your pictures professionally taken.",
     author: 'John G.',
 };
+
+useHead({
+    title: 'Online Dating Photos for Women',
+});
 </script>
 
 <template>

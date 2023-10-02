@@ -1,3 +1,8 @@
+<script setup>
+useHead({
+    title: 'Online Dating Photographer',
+});
+</script>
 <template>
     <Header />
 

@@ -5,6 +5,10 @@ const { data, error } = await useAsyncData('reviews', async () => {
 });
 
 const reviews = data.value.reviews.data.testimonials;
+
+useHead({
+    title: 'Reviews',
+});
 </script>
 
 <template>

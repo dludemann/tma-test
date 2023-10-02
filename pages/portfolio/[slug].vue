@@ -29,6 +29,28 @@ links = data.value.galleryList.data.map((page) => {
 const gallery = data.value.galleryList.data.filter((gallery) => gallery.slug === slug)[0];
 const galleryName = gallery.fields.gallery_name;
 const bannerImage = gallery.fields.banner_image;
+
+useHead({
+    title: gallery.fields.seo.title,
+    meta: [
+        {
+            name: 'description',
+            content: gallery.fields.seo.description,
+        },
+        {
+            name: 'og:description',
+            content: gallery.fields.seo.description,
+        },
+        {
+            name: 'og:title',
+            content: gallery.fields.seo.title,
+        },
+        {
+            name: 'og:image',
+            content: gallery.fields.seo.preview_image,
+        },
+    ],
+});
 </script>
 
 <template>

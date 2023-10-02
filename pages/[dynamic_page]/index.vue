@@ -25,6 +25,7 @@ const { data, error } = await useAsyncData('locations', async () => {
 });
 
 const cityInformation = data.value.locations.data.locations[0];
+console.log('cityUbfirnatuib', cityInformation);
 
 const pillClass = 'bg-white rounded-full px-6 flex gap-4 py-2 font-bold text-[22px] hover:bg-[#dea44e] items-center';
 const pillClassActive = 'bg-[#dea44e] rounded-full px-6 flex gap-4 py-2 font-bold text-[22px]';
@@ -39,6 +40,10 @@ const imageGallery = [
 
 let inquireForm = ref(null);
 const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
+
+useHead({
+    title: cityInformation.html_title ? cityInformation.html_title : `${cityInformation.city} Dating Photography`,
+});
 </script>
 
 <template>
@@ -69,7 +74,7 @@ const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth'
 
                 <div class="mt-[80px] p-2 flex items-center gap-4 rounded-full bg-[#232323] w-[365px]">
                     <div class="w-[54px] h-[54px] bg-gray-600 rounded-full flex-shrink-0 border-2 border-white"></div>
-                    <p class="text-white font text-body-small">
+                    <p class="text-white font text-body-small mr-1">
                         "An overall skyrocketing experience for my online dating." - Brent S.
                     </p>
                 </div>
@@ -82,10 +87,30 @@ const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth'
             <div
                 class="flex gap-4 flex-col lg:flex-row justify-between relative lg:absolute lg:bottom-20 opacity-50 w-full z-50 max-w-[200px] lg:max-w-[1200px] py-12 lg:py-0"
             >
-                <nuxt-img src="/images/location/clients/client-1.png" />
-                <nuxt-img src="/images/location/clients/client-2.png" />
-                <nuxt-img src="/images/location/clients/client-3.png" />
-                <nuxt-img src="/images/location/clients/client-4.png" />
+                <a
+                    class="col-span-4 lg:col-span-1"
+                    href="https://www.theamericanreporter.com/the-number-one-way-to-turn-your-online-dating-profile-around-the-match-artist/"
+                    target="_blank"
+                >
+                    <nuxt-img src="/images/location/clients/client-1.png" />
+                </a>
+                <a class="col-span-4 lg:col-span-1" href="https://www.entrepreneur.com/article/430103" target="_blank">
+                    <nuxt-img src="/images/location/clients/client-2.png" />
+                </a>
+                <a
+                    class="col-span-4 lg:col-span-1"
+                    href="https://nyweekly.com/dating/photos-that-help-you-find-love-introducing-the-match-artist/"
+                    target="_blank"
+                >
+                    <nuxt-img src="/images/location/clients/client-3.png" />
+                </a>
+                <a
+                    class="col-span-4 lg:col-span-1"
+                    href="https://www.morningbrew.com/daily/stories/2023/02/22/inside-jobs-dating-app-photographer-nick-friesen"
+                    target="_blank"
+                >
+                    <nuxt-img src="/images/location/clients/client-4.png" />
+                </a>
             </div>
         </section>
     </section>
@@ -364,7 +389,7 @@ const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth'
     <!-- DATING PROFILE -->
     <section class="bg-black py-20 px-8">
         <div
-            class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-6 lg:px-[64px] flex justify-between flex-col lg:flex-row"
+            class="bg-white max-w-[1200px] mx-auto rounded-[8px] py-10 px-6 lg:px-[64px] flex justify-between flex-col lg:flex-row gap-8"
         >
             <div class="flex flex-col justify-center lg:hidden">
                 <p class="text-primary-500 font-bold">
@@ -378,8 +403,9 @@ const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth'
             </div>
 
             <!-- PHOTOS -->
-            <div class="flex gap-4 lg:gap-12 items-end mb-10 lg:mb-0">
-                <div>
+            <div class="flex gap-4 lg:gap-12 mb-10 lg:mb-0 items-center justify-center">
+                <img :src="cityInformation.beforeafter_image" class="h-full w-full object-contain" />
+                <!-- <div>
                     <div class="relative max-h-[275px] max-w-[190px] w-full">
                         <nuxt-img src="/images/location/transform-1.png" />
                         <p
@@ -408,7 +434,7 @@ const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth'
                         <li>Get More Matches</li>
                         <li>Go On Better Dates</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
 
             <!-- TEXT -->

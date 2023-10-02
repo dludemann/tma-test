@@ -11,6 +11,9 @@ const { data, error } = await useAsyncData('locations', async () => {
 const posts = data.value.posts.data;
 
 const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rounded text-[18px]';
+useHead({
+    title: 'Our Blog',
+});
 </script>
 
 <template>

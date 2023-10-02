@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { team } from '../../configs/team';
+
+useHead({
+    title: 'Our Team',
+});
 </script>
 
 <template>

@@ -152,6 +152,10 @@ const studies: StudyObject[] = [
         },
     },
 ];
+
+useHead({
+    title: 'Case Studies',
+});
 </script>
 
 <template>

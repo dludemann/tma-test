@@ -33,6 +33,10 @@ if (parseInt(slug)) {
 }
 
 const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rounded text-[18px]';
+
+useHead({
+    title: post.seo_title,
+});
 </script>
 
 <template>

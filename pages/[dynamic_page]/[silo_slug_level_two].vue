@@ -135,6 +135,12 @@ const menuData = silo.fields.level_one_subject.map((l_one) => {
 const currentPath = initData(mainSlug, secondSlug);
 
 loaded.value = true;
+
+console.log('currentPath', currentPath);
+
+useHead({
+    title: currentPath.level_two.level_two_title,
+});
 </script>
 
 <template>
