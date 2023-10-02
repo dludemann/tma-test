@@ -19,7 +19,7 @@ const nav_links =
 <template>
     <footer class="bg-secondary-900">
         <!-- TOP SECTION -->
-        <section class="container mx-auto flex flex-col lg:flex-row py-16 gap-8 overflow-hidden justify-between px-8">
+        <section class="container mx-auto flex flex-col lg:flex-row py-16 gap-8 px-8">
             <!-- LOGO SECTION -->
             <div class="w-full lg:max-w-[300px] flex flex-col px-6 lg:px-0 items-center lg:items-start">
                 <!-- LOGO -->
@@ -48,7 +48,7 @@ const nav_links =
             </div>
 
             <!-- URLS -->
-            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 flex-shrink-0">
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12">
                 <!-- BROWSER COLUMN -->
                 <div class="w-full lg:w-[140px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">BROWSE</p>
@@ -80,7 +80,7 @@ const nav_links =
                 <div class="w-full lg:w-[250px] flex flex-col gap-4 flex-shrink-0">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">CONTACT US</p>
                     <nav class="flex flex-col gap-3">
-                        <p :class="nav_links">
+                        <div :class="nav_links">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg
                                     width="24"
@@ -106,7 +106,7 @@ const nav_links =
                                 </svg>
                             </div>
                             Austin, TX 78701
-                        </p>
+                        </div>
                         <a href="mailto:info@thematchartist.com" :class="nav_links">
                             <div class="w-6 h-6 flex items-center justify-center">
                                 <svg
@@ -126,12 +126,12 @@ const nav_links =
                                 </svg>
                             </div>
                             info@thematchartist.com
-                            </a>
+                        </a>
                     </nav>
                 </div>
 
                 <!-- ONLINE DATING TOOLS -->
-                <div class="flex-1 flex flex-col gap-4 px-6 overflow-hidden w-full">
+                <div class="flex-1 flex flex-col gap-4 px-6 overflow-hidden">
                     <p class="text-primary-500 text-heading-h6 font-bold text-center lg:text-left">
                         ONLINE DATING TOOLS
                     </p>
