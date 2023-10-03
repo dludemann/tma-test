@@ -34,8 +34,40 @@ if (parseInt(slug)) {
 
 const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rounded text-[18px]';
 
+console.log('post', post);
+console.log(route);
 useHead({
     title: post.seo_title,
+    meta: [
+        {
+            name: 'description',
+            content: post.meta_description,
+        },
+        {
+            name: 'og:description',
+            content: post.meta_description,
+        },
+        {
+            name: 'og:title',
+            content: post.seo_title,
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/' + route.fullPath,
+        },
+        {
+            name: 'og:image',
+            content: post.featured_image,
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 

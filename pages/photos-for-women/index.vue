@@ -18,6 +18,38 @@ const largeQuote2 = {
 
 useHead({
     title: 'Online Dating Photos for Women',
+    meta: [
+        {
+            name: 'description',
+            content:
+                'Looking for a professional photographer to take your pictures? Click here to book a session with a dating photographer expert!',
+        },
+        {
+            name: 'og:description',
+            content:
+                'Looking for a professional photographer to take your pictures? Click here to book a session with a dating photographer expert!',
+        },
+        {
+            name: 'og:title',
+            content: 'Online Dating Photos for Women',
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/photos-for-women',
+        },
+        {
+            name: 'og:image',
+            content: 'https://cdn.buttercms.com/SyfwUlPMRHqxm0lqpH4L',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 

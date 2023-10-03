@@ -41,8 +41,42 @@ const imageGallery = [
 let inquireForm = ref(null);
 const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
 
+console.log('city', cityInformation);
+
 useHead({
     title: cityInformation.html_title ? cityInformation.html_title : `${cityInformation.city} Dating Photography`,
+    meta: [
+        {
+            name: 'description',
+            content: `Online Dating Photos in ${cityInformation.city} ${cityInformation.state}. &quot;Before getting my pics taken by The Match Artist, I was getting 2-3 matches a week. Now I get 30+ matches every week!`,
+        },
+        {
+            name: 'og:description',
+            content: `Online Dating Photos in ${cityInformation.city} ${cityInformation.state}. &quot;Before getting my pics taken by The Match Artist, I was getting 2-3 matches a week. Now I get 30+ matches every week!`,
+        },
+        {
+            name: 'og:title',
+            content: cityInformation.html_title
+                ? cityInformation.html_title
+                : `${cityInformation.city} Dating Photography`,
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/' + route.fullPath,
+        },
+        {
+            name: 'og:image',
+            content: '/images/camera-in-a-mirror.jpg',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 

@@ -155,6 +155,36 @@ const studies: StudyObject[] = [
 
 useHead({
     title: 'Case Studies',
+    meta: [
+        {
+            name: 'description',
+            content: 'See how The Match Artist is helping real people achieve their dating goals.',
+        },
+        {
+            name: 'og:description',
+            content: 'See how The Match Artist is helping real people achieve their dating goals.',
+        },
+        {
+            name: 'og:title',
+            content: 'Case Studies',
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/case-studies',
+        },
+        {
+            name: 'og:image',
+            content: 'https://cdn.buttercms.com/yMmCAgvwToy9DG9iBAsP',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 

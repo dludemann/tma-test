@@ -1,6 +1,38 @@
 <script setup>
 useHead({
     title: 'How it Works',
+    meta: [
+        {
+            name: 'description',
+            content:
+                'We guide you through the entire process. We first give you some solid planning material, we then teach you how to look at the camera.',
+        },
+        {
+            name: 'og:description',
+            content:
+                'We guide you through the entire process. We first give you some solid planning material, we then teach you how to look at the camera.',
+        },
+        {
+            name: 'og:title',
+            content: 'How it Works',
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/how-it-works',
+        },
+        {
+            name: 'og:image',
+            content: 'https://cdn.buttercms.com/9E2CsIwQx2TyOfxFZ3eQ',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 <template>

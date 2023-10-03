@@ -13,6 +13,38 @@ const posts = data.value.posts.data;
 const pagerClasses = 'hover:bg-[#444444] bg-[#181818] py-2.5 px-5 text-white rounded text-[18px]';
 useHead({
     title: 'Our Blog',
+    meta: [
+        {
+            name: 'description',
+            content:
+                'Read about our process and get online dating advice. We will teach you how to alter your online presence to get more matches.',
+        },
+        {
+            name: 'og:description',
+            content:
+                'Read about our process and get online dating advice. We will teach you how to alter your online presence to get more matches.',
+        },
+        {
+            name: 'og:title',
+            content: 'Our Blog',
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/blog',
+        },
+        {
+            name: 'og:image',
+            content: 'https://cdn.buttercms.com/j7KRQz3QinCysULi6LQf',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 

@@ -2,7 +2,37 @@
 import { team } from '../../configs/team';
 
 useHead({
-    title: 'Our Team',
+    title: 'Reviews',
+    meta: [
+        {
+            name: 'description',
+            content: 'Photo collection by The Match Artist',
+        },
+        {
+            name: 'og:description',
+            content: 'Photo collection by The Match Artist',
+        },
+        {
+            name: 'og:title',
+            content: 'Reviews',
+        },
+        {
+            name: 'og:url',
+            content: 'https://thematchartist.com/reviews',
+        },
+        {
+            name: 'og:image',
+            content: '/images/camera-in-a-mirror.jpg',
+        },
+        {
+            name: 'og:site_name',
+            content: 'https://thematchartist.com',
+        },
+        {
+            name: 'og:type',
+            content: 'website',
+        },
+    ],
 });
 </script>
 
