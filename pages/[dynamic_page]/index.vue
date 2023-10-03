@@ -73,7 +73,11 @@ useHead({
                 </button>
 
                 <div class="mt-[80px] p-2 flex items-center gap-4 rounded-full bg-[#232323] w-[365px]">
-                    <div class="w-[54px] h-[54px] bg-gray-600 rounded-full flex-shrink-0 border-2 border-white"></div>
+                    <div
+                        class="w-[54px] overflow-hidden h-[54px] bg-gray-600 rounded-full flex-shrink-0 border-2 border-white relative"
+                    >
+                        <img src="/images/brent.png" alt="Photo of Brent" fill />
+                    </div>
                     <p class="text-white font text-body-small mr-1">
                         "An overall skyrocketing experience for my online dating." - Brent S.
                     </p>
@@ -477,19 +481,16 @@ useHead({
                     <p class="font-bold text-[38px] font-display">1000+</p>
                     <p class="text-[12px]">
                         Successful <br />
-                        Stories
+                        Clients
                     </p>
                 </div>
                 <div class="text-white flex items-center gap-2">
                     <p class="font-bold text-[38px] font-display">20+</p>
-                    <p class="text-[12px]">
-                        Professional <br />
-                        Photographers
-                    </p>
+                    <p class="text-[12px]">Marriages</p>
                 </div>
                 <div class="text-white flex items-center gap-2">
                     <p class="font-bold text-[38px] font-display">250+</p>
-                    <p class="text-[12px]">Photoshoots</p>
+                    <p class="text-[12px]">Relationships</p>
                 </div>
             </div>
         </div>
