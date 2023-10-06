@@ -11,7 +11,9 @@ const { data, error } = await useAsyncData(
 //     return data;
 // });
 
-const headerString = data.message ? `${data.message.city}, ${data.message.state}` : 'Across The United States';
+const headerString = data.value.message
+    ? `${data.value.message.city}, ${data.value.message.state}`
+    : 'Across The United States';
 
 console.log('data', data);
 
