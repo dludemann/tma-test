@@ -1,7 +1,4 @@
 <script setup>
-let city = null;
-let state = null;
-
 const { data, error } = await useAsyncData(
     'location',
     () => $fetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation'),
@@ -14,7 +11,7 @@ const { data, error } = await useAsyncData(
 //     return data;
 // });
 
-const headerString = data ? `${city}, ${state}` : 'Across The United States';
+const headerString = data.message ? `${data.message.city}, ${data.message.state}` : 'Across The United States';
 
 console.log('data', data);
 
