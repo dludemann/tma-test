@@ -4,7 +4,7 @@ let state = null;
 
 const { data, error } = await useAsyncData('location', async () => {
     const { data } = await axios.get('/.netlify/functions/findUserLocation');
-    return { locations };
+    return { data };
 });
 
 const headerString = data ? `${city}, ${state}` : 'Across The United States';
