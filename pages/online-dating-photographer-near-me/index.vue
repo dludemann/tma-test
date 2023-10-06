@@ -1,8 +1,13 @@
 <script setup>
+let city = null;
+let state = null;
+
 const { data, error } = await useAsyncData('location', async () => {
-    const locations = await $fetch('/api/getUserLocation');
+    const { data } = await axios.get('/.netlify/functions/findUserLocation');
     return { locations };
 });
+
+const headerString = data ? `${city}, ${state}` : 'Across The United States';
 
 console.log('data', data);
 
@@ -37,7 +42,7 @@ useHead({
             Online Dating Photos
         </p>
         <h1 class="font-light z-10 relative text-[96px] leading-[96px] text-center text-white">
-            Across the United States
+            {{ headerString }}
         </h1>
 
         <div class="absolute top-0 left-0 bg-black w-full h-full bg-opacity-50 z-0" />
