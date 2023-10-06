@@ -2,8 +2,10 @@
 let city = null;
 let state = null;
 
-const { data, error } = await useAsyncData('location', () =>
-    $fetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation'),
+const { data, error } = await useAsyncData(
+    'location',
+    () => $fetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation'),
+    { transform: (input) => JSON.parse(input) },
 );
 // const { data, error } = await useAsyncData('location', async () => {
 //     const { data } = await $fetch('/.netlify/functions/findUserLocation');
