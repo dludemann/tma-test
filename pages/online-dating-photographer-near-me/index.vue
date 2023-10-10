@@ -5,7 +5,7 @@
 //     { transform: (input) => JSON.parse(input) },
 // );
 
-const { data: ip } = await useFetch('https://api.ipify.org/?format=json');
+const { data: ip } = await useFetch('https://api.ipify.org/?format=json', { server: false });
 const { data: location } = await useFetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation');
 
 const data = JSON.parse(location.value);
