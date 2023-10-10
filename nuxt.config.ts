@@ -33,18 +33,18 @@ export default defineNuxtConfig({
             });
 
             // Generate Dynamic Portfolio Links
-            const galleryPages = await butter.page.list('gallery-page');
-            const gallerySlugs = galleryPages.data?.data.map((page) => {
-                if (page.slug === 'portfolio') return '/portfolio';
-                else return `/portfolio/${page.slug}`;
-            });
+            // const galleryPages = await butter.page.list('gallery-page');
+            // const gallerySlugs = galleryPages.data?.data.map((page) => {
+            //     if (page.slug === 'portfolio') return '/portfolio';
+            //     else return `/portfolio/${page.slug}`;
+            // });
 
             // Error Handling
             if (!locationSlugs) return;
-            if (!gallerySlugs) return;
+            // if (!gallerySlugs) return;
 
             // Construct final array
-            const slugs = [...locationSlugs, ...gallerySlugs];
+            const slugs = [...locationSlugs];
 
             // Add Routes
             nitroConfig?.prerender?.routes?.push(...slugs);
