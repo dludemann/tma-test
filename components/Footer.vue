@@ -139,30 +139,17 @@ const nav_links =
                         Sign up for The Match Artist newsletter to receive free online dating tools.
                     </p>
 
-                    <form class="flex flex-col gap-4">
-                        <fieldset class="flex flex-col">
-                            <input placeholder="Email" class="input" />
-                        </fieldset>
+                    <form
+                        class="drip-form flex flex-col gap-4"
+                        :class="`plausible-event-name=${newsletterPlausible}`"
+                        action="https://www.getdrip.com/forms/91517951/submissions"
+                        data-drip-embedded-form="91517951"
+                        method="post"
+                    >
+                        <input type="email" name="fields[email]" value="" placeholder="Email" required class="input" />
 
-                        <fieldset class="flex flex-col">
-                            <input placeholder="First Name" class="input" />
-                        </fieldset>
-
-                        <button class="btn btn-primary lg:w-auto">
-                            Sign Up
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M14 4.92969L12.5 6.42969L17.0703 11H3V13H17.0703L12.5 17.5703L14 19.0703L21.0703 12L14 4.92969Z"
-                                    fill="white"
-                                />
-                            </svg>
-                        </button>
+                        <input type="text" name="fields[first_name]" placeholder="First Name" required class="input" />
+                        <button class="btn btn-primary lg:w-auto" type="submit">Sign Up</button>
                     </form>
                 </div>
             </div>

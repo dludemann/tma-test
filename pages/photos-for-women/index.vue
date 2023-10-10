@@ -134,32 +134,7 @@ useHead({
     <div class="p-6 bg-white max-w-[800px] mx-auto flex-shrink-0 w-full flex flex-col items-center gap-8">
         <p class="font-bold font-accent text-[50px]">Inquire Now</p>
 
-        <form class="flex flex-col gap-4 w-full">
-            <fieldset class="flex flex-col">
-                <label>First Name</label>
-                <input placeholder="John" class="input" />
-            </fieldset>
-
-            <fieldset class="flex flex-col">
-                <label>Last Name</label>
-                <input placeholder="Doe" class="input" />
-            </fieldset>
-
-            <fieldset class="flex flex-col">
-                <label>Email</label>
-                <input placeholder="john@gmail.com" class="input" />
-            </fieldset>
-        </form>
-
-        <button class="btn btn-primary lg:w-auto">
-            Inquire Now
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M14 4.92969L12.5 6.42969L17.0703 11H3V13H17.0703L12.5 17.5703L14 19.0703L21.0703 12L14 4.92969Z"
-                    fill="white"
-                />
-            </svg>
-        </button>
+        <ContactForm />
     </div>
 
     <div class="max-w-[900px] mx-auto text-center mt-4 px-6">
