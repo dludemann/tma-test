@@ -1,13 +1,16 @@
 <script setup>
-const { data, error } = await useAsyncData(
-    'location',
-    () => $fetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation'),
-    { transform: (input) => JSON.parse(input), server: false },
-);
+// const { data, error } = await useAsyncData(
+//     'location',
+//     () => $fetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation'),
+//     { transform: (input) => JSON.parse(input) },
+// );
 
-const headerString = data.value.message
-    ? `${data.value.message.city}, ${data.value.message.state}`
-    : 'Across The United States';
+const { data: location } = await useFetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation');
+
+const data = JSON.parse(location.value);
+console.log('data', data);
+
+const headerString = data?.message ? `${data.message.city}, ${data.message.state}` : 'Across The United States';
 
 const largeQuote1 = {
     quote: 'Before getting pics taken by The Match Artist, I was getting 2-3 tinder matches a week. After getting new high value pictures from The Match Artist and tweaking my bio I was getting over 5 matches per day with really great girls. The results truly speak for themselves.',
