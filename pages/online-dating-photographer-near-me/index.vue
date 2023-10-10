@@ -6,7 +6,10 @@
 // );
 
 const { data: ip } = await useFetch('https://api.ipify.org/?format=json', { server: false });
-const { data: location } = await useFetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation');
+const { data: location } = await useFetch(
+    'https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation',
+    { server: false },
+);
 
 const data = JSON.parse(location.value);
 console.log('data', data);
