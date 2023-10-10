@@ -5,10 +5,12 @@
 //     { transform: (input) => JSON.parse(input) },
 // );
 
+const { data: ip } = await useFetch('https://api.ipify.org/?format=json');
 const { data: location } = await useFetch('https://dulcet-swan-3e453a.netlify.app/.netlify/functions/findUserLocation');
 
 const data = JSON.parse(location.value);
 console.log('data', data);
+console.log('ip', ip);
 
 const headerString = data?.message ? `${data.message.city}, ${data.message.state}` : 'Across The United States';
 
