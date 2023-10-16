@@ -35,15 +35,15 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: gallery.fields.seo.description,
+            content: cleanButterText(gallery.fields.seo.description),
         },
         {
             name: 'og:description',
-            content: gallery.fields.seo.description,
+            content: cleanButterText(gallery.fields.seo.description),
         },
         {
             name: 'og:title',
-            content: gallery.fields.seo.title,
+            content: cleanButterText(gallery.fields.seo.title),
         },
         {
             name: 'og:image',

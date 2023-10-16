@@ -41,15 +41,15 @@ useHead({
     meta: [
         {
             name: 'description',
-            content: post.meta_description,
+            content: cleanButterText(post.meta_description),
         },
         {
             name: 'og:description',
-            content: post.meta_description,
+            content: cleanButterText(post.meta_description),
         },
         {
             name: 'og:title',
-            content: post.seo_title,
+            content: cleanButterText(post.seo_title),
         },
         {
             name: 'og:url',
