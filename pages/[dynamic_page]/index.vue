@@ -25,10 +25,7 @@ const { data, error } = await useAsyncData('locations', async () => {
 });
 
 const cityInformation = data.value.locations.data.locations[0];
-console.log('cityUbfirnatuib', cityInformation);
-
-const pillClass = 'bg-white rounded-full px-6 flex gap-4 py-2 font-bold text-[22px] hover:bg-[#dea44e] items-center';
-const pillClassActive = 'bg-[#dea44e] rounded-full px-6 flex gap-4 py-2 font-bold text-[22px]';
+console.log('data', cityInformation.city);
 
 const imageGallery = [
     '/images/location/samples/headshot-1.webp',
