@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     runtimeConfig: {
         butterApiToken: process.env.BUTTERCMS_API_TOKEN,
     },
-
     ssr: true,
     hooks: {
         async 'nitro:config'(nitroConfig) {
@@ -49,6 +48,12 @@ export default defineNuxtConfig({
 
             // Add Routes
             nitroConfig?.prerender?.routes?.push(...slugs);
+        },
+    },
+    nitro: {
+        prerender: {
+            crawlLinks: true,
+            failOnError: false,
         },
     },
 });
