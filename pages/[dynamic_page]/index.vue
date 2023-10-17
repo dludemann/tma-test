@@ -803,7 +803,7 @@ useHead({
             <div class="p-6 bg-white max-w-[375px] flex-shrink-0 w-full flex flex-col items-start gap-8">
                 <p class="font-bold font-accent text-[50px]">Inquire Now</p>
 
-                <ContactForm :has-city-input="false" :city="cityInformation.city" />
+                <!-- <ContactForm :has-city-input="false" :city="cityInformation.city" /> -->
             </div>
         </div>
     </section>
