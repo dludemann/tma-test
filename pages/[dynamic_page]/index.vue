@@ -26,6 +26,7 @@ const { data, error } = await useAsyncData('locations', async () => {
 
 const cityInformation = data.value.locations.data.locations[0];
 console.log('data', cityInformation.city);
+console.log('error', error);
 
 const imageGallery = [
     '/images/location/samples/headshot-1.webp',
