@@ -79,6 +79,9 @@ useHead({
             content: 'website',
         },
     ],
+    htmlAttrs: {
+        lang: 'en',
+    },
 });
 </script>
 
@@ -112,7 +115,7 @@ useHead({
                     <div
                         class="w-[54px] overflow-hidden h-[54px] bg-gray-600 rounded-full flex-shrink-0 border-2 border-white relative"
                     >
-                        <img src="/images/brent.png" alt="Photo of Brent" fill />
+                        <nuxt-img src="/images/brent.png" alt="Photo of Brent" fill />
                     </div>
                     <p class="text-white font text-body-small mr-1">
                         "An overall skyrocketing experience for my online dating." - Brent S.
@@ -121,7 +124,7 @@ useHead({
             </div>
 
             <div class="absolute top-0 -right-32 w-[500px] h-[800px] lg:relative opacity-80 lg:opacity-100">
-                <nuxt-img src="/images/location/location-hero.png" />
+                <nuxt-img src="/images/location/location-hero.png" format="webp" alt="Smiling Man" />
             </div>
 
             <div
@@ -131,25 +134,37 @@ useHead({
                     class="col-span-4 lg:col-span-1"
                     href="https://www.theamericanreporter.com/the-number-one-way-to-turn-your-online-dating-profile-around-the-match-artist/"
                     target="_blank"
+                    aria-label="Read more the match artist on the american reporter"
                 >
-                    <nuxt-img src="/images/location/clients/client-1.png" />
+                    <nuxt-img
+                        src="/images/location/clients/client-1.png"
+                        format="webp"
+                        alt="The American Reporter Logo"
+                    />
                 </a>
-                <a class="col-span-4 lg:col-span-1" href="https://www.entrepreneur.com/article/430103" target="_blank">
-                    <nuxt-img src="/images/location/clients/client-2.png" />
+                <a
+                    aria-label="Read more the match artist on entrepreneur"
+                    class="col-span-4 lg:col-span-1"
+                    href="https://www.entrepreneur.com/article/430103"
+                    target="_blank"
+                >
+                    <nuxt-img src="/images/location/clients/client-2.png" format="webp" alt="Entrepreneur Logo" />
                 </a>
                 <a
                     class="col-span-4 lg:col-span-1"
                     href="https://nyweekly.com/dating/photos-that-help-you-find-love-introducing-the-match-artist/"
                     target="_blank"
+                    aria-label="Read more the match artist on NY Weekly"
                 >
-                    <nuxt-img src="/images/location/clients/client-3.png" />
+                    <nuxt-img src="/images/location/clients/client-3.png" format="webp" alt="NY Weekly Logo" />
                 </a>
                 <a
                     class="col-span-4 lg:col-span-1"
                     href="https://www.morningbrew.com/daily/stories/2023/02/22/inside-jobs-dating-app-photographer-nick-friesen"
                     target="_blank"
+                    aria-label="Read more the match artist on the Morning Brew"
                 >
-                    <nuxt-img src="/images/location/clients/client-4.png" />
+                    <nuxt-img src="/images/location/clients/client-4.png" format="webp" alt="Morning Brew Logo" />
                 </a>
             </div>
         </section>
@@ -183,7 +198,7 @@ useHead({
                     <Slide v-for="slide in imageGallery" :key="slide">
                         <div class="slide mr-10">
                             <div class="h-[500px] w-[350px] overflow-hidden">
-                                <nuxt-img :src="slide" />
+                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" />
                             </div>
                         </div>
                     </Slide>
@@ -193,6 +208,7 @@ useHead({
 
         <div class="flex gap-4 mx-auto container items-center justify-center">
             <button
+                aria-label="Previous Image"
                 @click="sampleCarousel.prev()"
                 class="btn btn-primary mt-6 lg:w-auto rounded-full !w-[56px] p-0 h-[56px] flex items-center justify-center transform rotate-180"
             >
@@ -206,6 +222,7 @@ useHead({
 
             <button
                 @click="sampleCarousel.next()"
+                aria-label="Next Image Image"
                 class="btn btn-primary mt-6 lg:w-auto rounded-full !w-[56px] p-0 h-[56px] flex items-center justify-center"
             >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -361,7 +378,11 @@ useHead({
 
             <!-- PHOTOS -->
             <div class="flex gap-4 lg:gap-12 mb-10 lg:mb-0 items-center justify-center">
-                <img :src="cityInformation.beforeafter_image" class="h-full w-full object-contain" />
+                <nuxt-img
+                    :src="cityInformation.beforeafter_image"
+                    class="h-full w-full object-contain"
+                    alt="Before / After Photo"
+                />
                 <!-- <div>
                     <div class="relative max-h-[275px] max-w-[190px] w-full">
                         <nuxt-img src="/images/location/transform-1.png" />
@@ -456,7 +477,7 @@ useHead({
                 <div
                     class="relative lg:absolute w-[200px] lg:w-auto top-[50px] lg:top-0 h-full lg:h-auto overflow-hidden -right-1/4 lg:right-1/4"
                 >
-                    <nuxt-img src="/images/mockup.svg" />
+                    <nuxt-img src="/images/mockup.svg" format="webp" alt="iPhone image of tinder" />
                 </div>
             </div>
             <article class="max-w-[560px] w-full p-4">
@@ -676,7 +697,7 @@ useHead({
             </article>
 
             <div class="max-w-[766px] max-h-[766px]">
-                <nuxt-img src="/images/location/group-image.png" />
+                <nuxt-img src="/images/location/group-image.webp" format="webp" alt="Photo showcase" />
             </div>
         </div>
     </section>
