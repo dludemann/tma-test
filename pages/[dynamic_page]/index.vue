@@ -196,7 +196,7 @@ useHead({
                     <Slide v-for="slide in imageGallery" :key="slide">
                         <div class="slide mr-10">
                             <div class="h-[500px] w-[350px] overflow-hidden">
-                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" />
+                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" loading="lazy" />
                             </div>
                         </div>
                     </Slide>
@@ -376,10 +376,11 @@ useHead({
 
             <!-- PHOTOS -->
             <div class="flex gap-4 lg:gap-12 mb-10 lg:mb-0 items-center justify-center">
-                <nuxt-img
+                <img
                     :src="cityInformation.beforeafter_image"
                     class="h-full w-full object-contain"
                     alt="Before / After Photo"
+                    loading="lazy"
                 />
                 <!-- <div>
                     <div class="relative max-h-[275px] max-w-[190px] w-full">
@@ -475,7 +476,7 @@ useHead({
                 <div
                     class="relative lg:absolute w-[200px] lg:w-auto top-[50px] lg:top-0 h-full lg:h-auto overflow-hidden -right-1/4 lg:right-1/4"
                 >
-                    <nuxt-img src="/images/mockup.svg" format="webp" alt="iPhone image of tinder" />
+                    <nuxt-img src="/images/mockup.svg" format="webp" alt="iPhone image of tinder" loading="lazy" />
                 </div>
             </div>
             <article class="max-w-[560px] w-full p-4">
