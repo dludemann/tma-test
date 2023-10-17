@@ -1,5 +1,17 @@
 <script setup lang="ts">
-import { team } from '../../configs/team';
+const { data, error } = await useAsyncData('team', async () => {
+    const team = await $fetch('/api/getTeamMembers');
+    return { team };
+});
+
+const team = data.value?.team
+    ? data.value?.team.data.team_member.map((team) => ({
+          name: team.name,
+          title: team.position,
+          img: team.headshot,
+          description: team.bio,
+      }))
+    : [];
 
 useHead({
     title: 'Reviews',
@@ -46,8 +58,8 @@ useHead({
         <div class="grid grid-cols-2 gap-16">
             <!-- TEAM MEMBER -->
             <div v-for="member in team" :key="member.name" class="col-span-2 lg:col-span-1 text-center overflow-hidden">
-                <div class="h-auto lg:h-[510px] w-full lg:w-[510px] bg-slate-500 overflow-hidden">
-                    <nuxt-img :src="member.img" />
+                <div class="h-auto lg:h-[510px] w-full lg:w-[510px] bg-slate-500 overflow-hidden relative">
+                    <img :src="member.img" class="object-cover h-full w-full" />
                 </div>
 
                 <article class="p-8">

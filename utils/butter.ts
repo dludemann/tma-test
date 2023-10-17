@@ -12,6 +12,16 @@ export const getLocations = async (params?: any) => {
     }
 };
 
+export const getTeamMembers = async (params?: any) => {
+    try {
+        const res = await butter.content.retrieve(['team_member']);
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 export const getLocationsByCity = async (city?: any) => {
     try {
         const res = await butter.content.retrieve(['locations'], { 'fields.city': city });

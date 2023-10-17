@@ -2,7 +2,20 @@
 import { useHead } from 'nuxt/app';
 import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import { team } from '../../configs/team';
+
+const { data, error } = await useAsyncData('team', async () => {
+    const team = await $fetch('/api/getTeamMembers');
+    return { team };
+});
+
+const team = data.value?.team
+    ? data.value?.team.data.team_member.map((team) => ({
+          name: team.name,
+          title: team.position,
+          img: team.headshot,
+          description: team.bio,
+      }))
+    : [];
 
 const settings = {
     itemsToShow: 6,
