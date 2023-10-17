@@ -31,17 +31,15 @@ const pillClass = 'bg-white rounded-full px-6 flex gap-4 py-2 font-bold text-[22
 const pillClassActive = 'bg-[#dea44e] rounded-full px-6 flex gap-4 py-2 font-bold text-[22px]';
 
 const imageGallery = [
-    '/images/location/samples/headshot-1.png',
-    '/images/location/samples/headshot-2.png',
-    '/images/location/samples/headshot-3.png',
-    '/images/location/samples/headshot-4.png',
-    '/images/location/samples/headshot-5.png',
+    '/images/location/samples/headshot-1.webp',
+    '/images/location/samples/headshot-2.webp',
+    '/images/location/samples/headshot-3.webp',
+    '/images/location/samples/headshot-4.webp',
+    '/images/location/samples/headshot-5.webp',
 ];
 
 let inquireForm = ref(null);
 const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
-
-console.log('city', cityInformation);
 
 useHead({
     title: cityInformation.html_title
@@ -115,7 +113,7 @@ useHead({
                     <div
                         class="w-[54px] overflow-hidden h-[54px] bg-gray-600 rounded-full flex-shrink-0 border-2 border-white relative"
                     >
-                        <nuxt-img src="/images/brent.png" alt="Photo of Brent" fill />
+                        <nuxt-img src="/images/brent.webp" alt="Photo of Brent" fill width="50" height="50" />
                     </div>
                     <p class="text-white font text-body-small mr-1">
                         "An overall skyrocketing experience for my online dating." - Brent S.
@@ -124,7 +122,7 @@ useHead({
             </div>
 
             <div class="absolute top-0 -right-32 w-[500px] h-[800px] lg:relative opacity-80 lg:opacity-100">
-                <nuxt-img src="/images/location/location-hero.png" format="webp" alt="Smiling Man" />
+                <nuxt-img src="/images/location/location-hero.webp" format="webp" alt="Smiling Man" />
             </div>
 
             <div
