@@ -25,12 +25,12 @@ export default defineNuxtConfig({
             const butter = Butter(process.env.BUTTERCMS_API_TOKEN as string);
 
             // Generate Dynamic Locations
-            // const locations = await butter.content.retrieve(['locations']);
-            // const locationSlugs = locations.data?.data.locations.map((location) => {
-            //     return `/${slugify(`${location.city}-dating-photography`, {
-            //         lower: true,
-            //     })}`;
-            // });
+            const locations = await butter.content.retrieve(['locations']);
+            const locationSlugs = locations.data?.data.locations.map((location) => {
+                return `/${slugify(`${location.city}-dating-photography`, {
+                    lower: true,
+                })}`;
+            });
 
             // Generate Dynamic Portfolio Links
             // const galleryPages = await butter.page.list('gallery-page');
@@ -40,11 +40,11 @@ export default defineNuxtConfig({
             // });
 
             // Error Handling
-            // if (!locationSlugs) return;
+            if (!locationSlugs) return;
             // if (!gallerySlugs) return;
 
             // Construct final array
-            const slugs = [];
+            const slugs = [...locationSlugs];
 
             // Add Routes
             nitroConfig?.prerender?.routes?.push(...slugs);
