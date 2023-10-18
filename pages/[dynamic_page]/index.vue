@@ -2,6 +2,8 @@
 import { useRoute } from 'nuxt/app';
 import { ref } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
+import { getStateAbbreviation } from '../../utils/general';
+
 import 'vue3-carousel/dist/carousel.css';
 const route = useRoute();
 const sampleCarousel = ref(null);
@@ -25,7 +27,6 @@ const { data, error } = await useAsyncData('locations', async () => {
 });
 
 const cityInformation = data.value.locations.data.locations[0];
-console.log('data', cityInformation.city);
 
 if (error) {
     console.log('error', error);
@@ -41,6 +42,7 @@ const imageGallery = [
 
 let inquireForm = ref(null);
 const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
+const state = getStateAbbreviation(cityInformation.state);
 
 useHead({
     title: cityInformation.html_title
@@ -471,13 +473,13 @@ useHead({
     </section>
 
     <!-- ELEVATE -->
-    <section class="bg-[#E5E5E5] lg:py-[180px] overflow-hidden">
+    <section class="bg-[#E5E5E5] lg:py-[80px] overflow-hidden">
         <div class="container mx-auto relative flex flex-col gap-8 lg:flex-row justify-end">
             <div class="h-[350px] lg:h-auto w-full relative mb-8">
                 <div
-                    class="relative lg:absolute w-[200px] lg:w-auto top-[50px] lg:top-0 h-full lg:h-auto overflow-hidden -right-1/4 lg:right-1/4"
+                    class="relative lg:absolute w-[200px] lg:w-auto top-[10px] lg:top-0 h-full lg:h-auto overflow-hidden -right-1/4 lg:right-1/4"
                 >
-                    <nuxt-img src="/images/mockup.svg" format="webp" alt="iPhone image of tinder" loading="lazy" />
+                    <phone-mockup :city="cityInformation.city" :state="state" />
                 </div>
             </div>
             <article class="max-w-[560px] w-full p-4">

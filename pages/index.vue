@@ -39,15 +39,15 @@ useHead({
         </div>
 
         <div class="pb-[50px] text-center flex gap-4 justify-center items-center">
-            <nav-link to="/how-it-works">
+            <nuxt-link to="/how-it-works">
                 <button class="border-b-2 text-[18px] py-1 border-black">How it works</button>
-            </nav-link>
+            </nuxt-link>
 
             <p class="font-bold">/</p>
 
-            <nav-link to="/online-dating-photographer-near-me">
+            <nuxt-link to="/online-dating-photographer-near-me">
                 <button class="border-b-2 text-[18px] py-1 border-black">Book a Call</button>
-            </nav-link>
+            </nuxt-link>
         </div>
     </section>
 
@@ -234,7 +234,9 @@ useHead({
             Sessions available in all major U.S. cities
         </h1>
         <div class="flex justify-center mb-4">
-            <nuxt-link class="text-[18px] z-10 relative text-center tracking-[1px] leading-[34px] text-white border-b-2"
+            <nuxt-link
+                to="/online-dating-photographer-near-me"
+                class="text-[18px] z-10 relative text-center tracking-[1px] leading-[34px] text-white border-b-2"
                 >Schedule a photography session now.</nuxt-link
             >
         </div>
@@ -335,7 +337,9 @@ useHead({
             We are the online dating experts.
         </h1>
         <div class="flex justify-center mb-4">
-            <nuxt-link class="text-[18px] z-10 relative text-center tracking-[1px] leading-[34px] text-white border-b-2"
+            <nuxt-link
+                to="/online-dating-photographer-near-me"
+                class="text-[18px] z-10 relative text-center tracking-[1px] leading-[34px] text-white border-b-2"
                 >Schedule a photography session now.</nuxt-link
             >
         </div>

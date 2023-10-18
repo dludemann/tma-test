@@ -117,6 +117,7 @@ const { data, error } = await useAsyncData('silo', async () => {
 });
 
 const silo = data.value.silo.data;
+
 const menuData = silo.fields.level_one_subject.map((l_one) => {
     return {
         title: l_one.fields.level_one_title,
@@ -166,8 +167,9 @@ useHead({
                         {{ currentPath.level_two.level_two_title }}
                     </h1>
                     <div class="flex gap-2 items-center mb-4">
-                        <div class="w-6 h-6 rounded-full bg-gray-400"></div>
-                        <p class="text-[#475569]">Written By <span class="font-bold text-black">John Smith</span></p>
+                        <p class="text-[#475569]">
+                            Written By <span class="font-bold text-black">{{ silo.fields.author }}</span>
+                        </p>
                     </div>
 
                     <div>
