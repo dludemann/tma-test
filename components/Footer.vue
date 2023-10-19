@@ -4,13 +4,15 @@ const { data, error } = await useAsyncData('silos', async () => {
     return { silos };
 });
 
-const silos = data.value.silos.data.reverse().map((silo) => {
-    return {
-        title: silo.fields.footer_title,
-        slug: silo.slug,
-        url: `/${silo.slug}/${silo.fields.level_one_subject[0].fields.level_two[0].level_two_slug}`,
-    };
-});
+const silos = data.value.silos.data
+    .map((silo) => {
+        return {
+            title: silo.fields.footer_title,
+            slug: silo.slug,
+            url: `/${silo.slug}/${silo.fields.level_one_subject[0].fields.level_two[0].level_two_slug}`,
+        };
+    })
+    .reverse();
 
 const nav_links =
     'text-white text-[16px] leading-[120%] font-medium tracking-[-0.32px] font-display py-1 flex gap-2 items-center justify-center lg:justify-start text-center lg:text-left hover:text-primary-700';

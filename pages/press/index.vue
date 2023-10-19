@@ -84,22 +84,19 @@ useHead({
     <section class="city-bg h-auto py-[51px] lg:py-0 lg:h-[320px] flex items-center">
         <div class="container mx-auto flex flex-col lg:flex-row justify-center gap-4 lg:gap-10">
             <div class="flex gap-2 items-center flex-col lg:flex-row">
-                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">2010</p>
+                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">2018</p>
                 <p class="text-white font-body text-[12px] lg:text-body-xlarge">Founded</p>
             </div>
 
             <div class="flex gap-2 items-center flex-col lg:flex-row">
-                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">100k+</p>
-                <p class="text-white font-body text-[12px] lg:text-body-xlarge">
-                    Successful <br class="hidden lg:block" />
-                    Stories
-                </p>
+                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">10 +</p>
+                <p class="text-white font-body text-[12px] lg:text-body-xlarge">Marriages</p>
             </div>
 
             <div class="flex gap-2 items-center flex-col lg:flex-row">
-                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">20</p>
+                <p class="text-white font-display font-bold text-heading-h2 lg:text-[64px] lg:leading-[120%]">10</p>
                 <p class="text-white font-body text-[12px] lg:text-body-xlarge">
-                    Professional <br class="hidden lg:block" />
+                    Professional Full Time<br class="hidden lg:block" />
                     Photographers
                 </p>
             </div>
