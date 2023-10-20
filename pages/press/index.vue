@@ -152,7 +152,9 @@ useHead({
                 We're here to help - contact us if you have any queries about our services and we'll be happy to offer
                 personalized guidance
             </p>
-            <a href="#" class="underline text-error-900 font-body font-medium text-body-regular"
+            <a
+                href="mailto:media@thematchartist.com"
+                class="underline text-error-900 font-body font-medium text-body-regular"
                 >media@thematchartist.com</a
             >
         </div>

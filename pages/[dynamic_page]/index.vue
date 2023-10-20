@@ -125,7 +125,7 @@ useHead({
             </div>
 
             <div class="absolute top-0 -right-32 w-[500px] h-[800px] lg:relative opacity-80 lg:opacity-100">
-                <nuxt-img src="/images/location/location-hero.webp" format="webp" alt="Smiling Man" />
+                <nuxt-img src="/images/brian.webp" format="webp" alt="Smiling Man" />
             </div>
 
             <div
@@ -199,7 +199,7 @@ useHead({
                     <Slide v-for="slide in imageGallery" :key="slide">
                         <div class="slide mr-10">
                             <div class="h-[500px] w-[350px] overflow-hidden">
-                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" loading="lazy" />
+                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" />
                             </div>
                         </div>
                     </Slide>
