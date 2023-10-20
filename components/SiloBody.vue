@@ -38,9 +38,18 @@ export default {
         // Update all anchor tags in silo body from butter to open in new tab
         setTimeout(() => {
             const page = document.getElementById('page-content');
+            const header = document.getElementById('header-content');
             const anchors = page.getElementsByTagName('a');
-            anchors.forEach((anchor) => anchor.setAttribute('target', '_blank'));
-        }, 100);
+            const headerAnchors = header.getElementsByTagName('a');
+
+            Array.from(anchors).forEach(function (element) {
+                element.setAttribute('target', '_blank');
+            });
+
+            Array.from(headerAnchors).forEach(function (element) {
+                element.setAttribute('target', '_blank');
+            });
+        }, 200);
 
         setTimeout(() => {
             const hash = this.$route.hash;

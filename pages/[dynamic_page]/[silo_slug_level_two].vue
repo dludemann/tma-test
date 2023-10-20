@@ -137,7 +137,81 @@ const currentPath = initData(mainSlug, secondSlug);
 
 loaded.value = true;
 
+console.log('menuData', menuData);
 console.log('currentPath', currentPath);
+console.log('mainSlug', mainSlug);
+
+const generatePrevious = () => {
+    menuData[currentPath.level_one].title;
+    const currentLevelTwoIndex = menuData[currentPath.level_one].children.findIndex(
+        (c) => c.slug === currentPath.level_two.level_two_slug,
+    );
+    const previousLevelTwo = menuData[currentPath.level_one].children[currentLevelTwoIndex - 1];
+    if (previousLevelTwo) {
+        return {
+            title: menuData[currentPath.level_one].title,
+            slug: `/${mainSlug}/${previousLevelTwo.slug}`,
+            section: previousLevelTwo.title,
+            active: true,
+        };
+    } else {
+        const previousSilo = menuData[currentPath.level_one - 1];
+
+        if (currentPath.level_one === 0) {
+            return {
+                title: menuData[currentPath.level_one].title,
+                slug: '',
+                section: currentPath.level_two.level_two_title,
+                active: false,
+            };
+        }
+
+        return {
+            title: previousSilo.title,
+            slug: `/${mainSlug}/${previousSilo.children[previousSilo.children.length - 1].slug}`,
+            section: previousSilo.children[previousSilo.children.length - 1].title,
+            active: true,
+        };
+    }
+};
+
+const generateNext = () => {
+    menuData[currentPath.level_one].title;
+    const currentLevelTwoIndex = menuData[currentPath.level_one].children.findIndex(
+        (c) => c.slug === currentPath.level_two.level_two_slug,
+    );
+
+    const nextLevelTwo = menuData[currentPath.level_one].children[currentLevelTwoIndex + 1];
+
+    if (nextLevelTwo) {
+        return {
+            title: menuData[currentPath.level_one].title,
+            slug: `/${mainSlug}/${nextLevelTwo.slug}`,
+            section: nextLevelTwo.title,
+            active: true,
+        };
+    } else {
+        // if we're at the end there is no more
+        if (menuData.length === currentPath.level) {
+            return {
+                title: menuData[currentPath.level_one].title,
+                slug: '',
+                section: currentPath.level_two.level_two_title,
+                active: false,
+            };
+        }
+
+        // Grab next silo
+        const nextSilo = menuData[currentPath.level_one + 1];
+
+        return {
+            title: nextSilo.title,
+            slug: `/${mainSlug}/${nextSilo.children[0].slug}`,
+            section: nextSilo.children[0].title,
+            active: true,
+        };
+    }
+};
 
 useHead({
     title: currentPath.level_two.level_two_title,
@@ -194,7 +268,9 @@ useHead({
                     </div>
                 </header>
 
-                <div class="silo-content" v-html="currentPath.level_two.level_two_content" />
+                <div id="header-content">
+                    <div class="silo-content" v-html="currentPath.level_two.level_two_content" />
+                </div>
             </article>
             <SiloBody
                 class="silo-content"
@@ -202,9 +278,17 @@ useHead({
                 @hash-change="changeCurrentHash"
             />
 
-            <div class="w-full pl-16 mt-16">
-                <div class="flex w-full">
-                    <div class="bg-[#227F94] flex gap-10 px-10 items-center h-[185px] w-1/2 cursor-pointer">
+            <div class="w-full mt-16">
+                <div class="flex flex-col lg:flex-row w-full">
+                    <nuxt-link
+                        :to="generatePrevious().slug"
+                        :class="
+                            generatePrevious().active
+                                ? 'cursor-pointer hover:bg-[#1789a3]'
+                                : 'cursor-not-allowed bg-opacity-50'
+                        "
+                        class="bg-[#227F94] flex gap-10 px-10 items-center h-[185px] lg:w-1/2 c text-left"
+                    >
                         <div class="w-8 h-8 flex items-center justify-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -224,14 +308,22 @@ useHead({
                         </div>
 
                         <div class="text-white">
-                            <p>Tinder Basic</p>
-                            <p class="font-bold text-[32px] font-display">What is Tinder?</p>
+                            <p>{{ generatePrevious().title }}</p>
+                            <p class="font-bold text-[28px] font-display">{{ generatePrevious().section }}</p>
                         </div>
-                    </div>
-                    <div class="bg-[#990808] flex gap-10 px-10 items-center h-[185px] w-1/2 justify-end cursor-pointer">
+                    </nuxt-link>
+                    <nuxt-link
+                        :to="generateNext().slug"
+                        :class="
+                            generateNext().active
+                                ? 'cursor-pointer hover:bg-[#ab0707]'
+                                : 'cursor-not-allowed bg-opacity-50'
+                        "
+                        class="bg-[#990808] flex gap-10 px-10 items-center h-[185px] lg:w-1/2 justify-end cursor-pointer"
+                    >
                         <div class="text-white">
-                            <p>Tinder Basic</p>
-                            <p class="font-bold text-[32px] font-display">What is Tinder?</p>
+                            <p>{{ generateNext().title }}</p>
+                            <p class="font-bold text-[28px] font-display">{{ generateNext().section }}</p>
                         </div>
 
                         <div class="w-8 h-8 flex items-center justify-center transform rotate-180">
@@ -251,11 +343,11 @@ useHead({
                                 />
                             </svg>
                         </div>
-                    </div>
+                    </nuxt-link>
                 </div>
             </div>
 
-            <section class="bg-[#090303] py-20 ml-16">
+            <section class="bg-[#090303] py-20">
                 <div
                     class="container mx-auto flex justify-between items-start px-4 lg:px-16 flex-col lg:flex-row gap-12"
                 >
