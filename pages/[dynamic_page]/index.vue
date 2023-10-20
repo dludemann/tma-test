@@ -208,7 +208,7 @@ useHead({
                 <Carousel v-bind="settings" ref="sampleCarousel" :breakpoints="breakpoints">
                     <Slide v-for="slide in imageGallery" :key="slide">
                         <div class="h-[500px] lg:w-[350px] max-w-[350px] overflow-hidden relative">
-                            <nuxt-img :src="slide" alt="Portfolio Image" class="h-full w-full object-cover" />
+                            <img :src="slide" alt="Portfolio Image" class="h-full w-full object-cover" />
                         </div>
                     </Slide>
                 </Carousel>
