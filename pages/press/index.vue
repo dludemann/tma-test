@@ -9,16 +9,21 @@ const { data, error } = await useAsyncData('team', async () => {
 });
 
 const team = data.value?.team
-    ? data.value?.team.data.team_member.map((team) => ({
-          name: team.name,
-          title: team.position,
-          img: team.headshot,
-          description: team.bio,
+    ? data.value?.team?.data.fields.team.map((t) => ({
+          name: t.name,
+          title: t.position,
+          img: t.headshot,
+          description: t.bio,
       }))
     : [];
-
 const settings = {
-    itemsToShow: 6,
+    itemsToShow: 1.1,
+};
+
+const breakpoints = {
+    1024: {
+        itemsToShow: 6,
+    },
 };
 
 useHead({
@@ -69,9 +74,9 @@ useHead({
         <div class="container mx-auto py-[98px] px-4">
             <h2 class="text-white text-heading-h2 font-bold mb-9 text-center lg:text-left">The Match Artist Team</h2>
             <div class="flex gap-10 overflow-hidden">
-                <Carousel v-bind="settings">
+                <Carousel v-bind="settings" :breakpoints="breakpoints">
                     <Slide v-for="slide in team" :key="slide.name">
-                        <div class="slide mr-10">
+                        <div class="slide">
                             <TeamMember :name="slide.name" :title="slide.title" :img="slide.img" />
                         </div>
                     </Slide>

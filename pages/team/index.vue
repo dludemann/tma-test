@@ -5,11 +5,11 @@ const { data, error } = await useAsyncData('team', async () => {
 });
 
 const team = data.value?.team
-    ? data.value?.team.data.team_member.map((team) => ({
-          name: team.name,
-          title: team.position,
-          img: team.headshot,
-          description: team.bio,
+    ? data.value?.team?.data.fields.team.map((t) => ({
+          name: t.name,
+          title: t.position,
+          img: t.headshot,
+          description: t.bio,
       }))
     : [];
 

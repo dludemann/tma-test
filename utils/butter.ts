@@ -14,7 +14,7 @@ export const getLocations = async (params?: any) => {
 
 export const getTeamMembers = async (params?: any) => {
     try {
-        const res = await butter.content.retrieve(['team_member']);
+        const res = await butter.page.retrieve('*', 'team');
         return res?.data;
     } catch (error) {
         console.log(error);

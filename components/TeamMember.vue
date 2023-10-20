@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white flex flex-col">
         <div class="h-[300px] w-[300px] bg-slate-500 overflow-hidden">
-            <nuxt-img :src="props.img" />
+            <nuxt-img :src="props.img" class="h-full w-full object-cover" />
         </div>
         <div class="flex flex-col gap-1 p-4">
             <p class="text-black font-bold font-display text-heading-h4">{{ props.name }}</p>

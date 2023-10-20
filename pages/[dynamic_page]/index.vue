@@ -8,7 +8,13 @@ import 'vue3-carousel/dist/carousel.css';
 const route = useRoute();
 const sampleCarousel = ref(null);
 const settings = {
-    itemsToShow: 4,
+    itemsToShow: 1.1,
+};
+
+const breakpoints = {
+    1024: {
+        itemsToShow: 4,
+    },
 };
 
 let city = route.params.dynamic_page
@@ -195,11 +201,11 @@ useHead({
         <!-- IMAGE SLIDER -->
         <section class="container mx-auto overflow-hidden">
             <div class="flex gap-10 overflow-hidden">
-                <Carousel v-bind="settings" ref="sampleCarousel">
+                <Carousel v-bind="settings" ref="sampleCarousel" :breakpoints="breakpoints">
                     <Slide v-for="slide in imageGallery" :key="slide">
-                        <div class="slide mr-10">
-                            <div class="h-[500px] w-[350px] overflow-hidden">
-                                <nuxt-img :src="slide" format="webp" alt="Portfolio Image" />
+                        <div class="slide">
+                            <div class="h-[500px] lg:w-[350px] overflow-hidden">
+                                <nuxt-img :src="slide" alt="Portfolio Image" />
                             </div>
                         </div>
                     </Slide>
@@ -814,8 +820,8 @@ useHead({
 </template>
 
 <style>
-.carousel__slide {
+/* .carousel__slide {
     width: 350px !important;
     margin-right: 40px;
-}
+} */
 </style>
