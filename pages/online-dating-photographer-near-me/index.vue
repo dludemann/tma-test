@@ -11,7 +11,7 @@ const { data: location } = await useFetch(
     { server: false },
 );
 
-const data = JSON.parse(location.value);
+const data = JSON.parse(location?.value);
 console.log('data', data);
 console.log('ip', ip);
 

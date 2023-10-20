@@ -60,7 +60,7 @@ const nav_links =
                         <nuxt-link to="/locations" :class="nav_links">Locations</nuxt-link>
                         <nuxt-link to="/how-it-works" :class="nav_links">How it Works</nuxt-link>
                         <nuxt-link to="/photos-for-women" :class="nav_links">For Women</nuxt-link>
-                        <nuxt-link to="/online-dating-photographers-near-me" :class="nav_links">Book a Spot</nuxt-link>
+                        <nuxt-link to="/online-dating-photographer-near-me" :class="nav_links">Book a Spot</nuxt-link>
                         <nuxt-link to="/case-studies" :class="nav_links">Case Studies</nuxt-link>
                         <nuxt-link to="/press" :class="nav_links">Press</nuxt-link>
                     </nav>
