@@ -24,31 +24,9 @@
                                 >
                                     <!-- LEVEL ONE ICON -->
                                     <div class="w-6 h-6 bg-black mr-2 rounded-md flex items-center justify-center">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="17"
-                                            viewBox="0 0 16 17"
-                                            fill="none"
-                                        >
-                                            <g clip-path="url(#clip0_2846_3513)">
-                                                <path
-                                                    d="M7.99998 12.0133L12.12 14.4999L11.0266 9.81325L14.6666 6.65992L9.87331 6.25325L7.99998 1.83325L6.12665 6.25325L1.33331 6.65992L4.97331 9.81325L3.87998 14.4999L7.99998 12.0133Z"
-                                                    fill="white"
-                                                />
-                                            </g>
-                                            <defs>
-                                                <clipPath id="clip0_2846_3513">
-                                                    <rect
-                                                        width="16"
-                                                        height="16"
-                                                        fill="white"
-                                                        transform="translate(0 0.5)"
-                                                    />
-                                                </clipPath>
-                                            </defs>
-                                        </svg>
+                                        <random-icon :index="i" />
                                     </div>
+
                                     <span>{{ level_one.title }}</span>
                                 </button>
 
@@ -104,10 +82,12 @@
 </template>
 
 <script>
+import RandomIcon from './RandomIcon.vue';
 // import RightArrow from '../assets/arrow-right-thin.svg';
 // import Menu from '../assets/menu-svgrepo.svg';
 
 export default {
+    components: { RandomIcon },
     name: 'SideNavChat',
     props: {
         menuData: {

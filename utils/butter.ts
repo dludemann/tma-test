@@ -24,7 +24,18 @@ export const getTeamMembers = async (params?: any) => {
 
 export const getLocationsByCity = async (city?: any) => {
     try {
+        //@ts-ignore
         const res = await butter.content.retrieve(['locations'], { 'fields.city': city });
+        return res?.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const getLocationsGalleryByID = async (id?: any) => {
+    try {
+        const res = await butter.content.retrieve(['location_gallery']);
         return res?.data;
     } catch (error) {
         console.log(error);

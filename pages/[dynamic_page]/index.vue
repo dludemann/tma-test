@@ -29,22 +29,26 @@ if (city === 'Winston Salem') {
 
 const { data, error } = await useAsyncData('locations', async () => {
     const locations = await $fetch(`/api/getLocationsByCity?city=${city}`);
-    return { locations };
+    const location_id = locations.data.locations[0].meta.id;
+    const gallery = await $fetch(`/api/getLocationGalleryById?id=${location_id}`);
+    return { locations, gallery };
 });
 
 const cityInformation = data.value.locations.data.locations[0];
-
-if (error) {
-    console.log('error', error);
-}
+const gallery = data.value.gallery.data.location_gallery.find((g) => g.location.meta.id === cityInformation.meta.id);
 
 const imageGallery = [
-    '/images/location/samples/headshot-1.webp',
-    '/images/location/samples/headshot-2.webp',
-    '/images/location/samples/headshot-3.webp',
-    '/images/location/samples/headshot-4.webp',
-    '/images/location/samples/headshot-5.webp',
+    gallery.image1,
+    gallery.image2,
+    gallery.image3,
+    gallery.image4,
+    gallery.image5,
+    gallery.image6,
+    gallery.image7,
+    gallery.image8,
 ];
+
+console.log('image', imageGallery);
 
 let inquireForm = ref(null);
 const scrollToBook = () => inquireForm.value.scrollIntoView({ behavior: 'smooth' });
@@ -203,10 +207,8 @@ useHead({
             <div class="flex gap-10 overflow-hidden">
                 <Carousel v-bind="settings" ref="sampleCarousel" :breakpoints="breakpoints">
                     <Slide v-for="slide in imageGallery" :key="slide">
-                        <div class="slide">
-                            <div class="h-[500px] lg:w-[350px] overflow-hidden">
-                                <nuxt-img :src="slide" alt="Portfolio Image" />
-                            </div>
+                        <div class="h-[500px] lg:w-[350px] max-w-[350px] overflow-hidden relative">
+                            <nuxt-img :src="slide" alt="Portfolio Image" class="h-full w-full object-cover" />
                         </div>
                     </Slide>
                 </Carousel>
@@ -754,7 +756,7 @@ useHead({
     <!-- PRE FOOTER -->
     <section class="bg-[#090303] py-20">
         <div class="container mx-auto flex justify-between items-start px-4 lg:px-32 flex-col lg:flex-row">
-            <article class="max-w-[560px] w-full text-white" id="inquire-now" ref="inquireForm">
+            <article class="max-w-[560px] w-full text-white" id="inquire-now">
                 <h1 class="font-bold text-heading-h1 font-accent">
                     Professional Dating Photography in {{ cityInformation.city }}, {{ cityInformation.state }}
                 </h1>
@@ -803,7 +805,7 @@ useHead({
                             />
                         </svg>
 
-                        <p class="text-[18.5px] font-body">Improved social media presence</p>
+                        <p class="text-[18.5px] font-body" ref="inquireForm">Improved social media presence</p>
                     </div>
                 </div>
             </article>
@@ -820,8 +822,10 @@ useHead({
 </template>
 
 <style>
-/* .carousel__slide {
-    width: 350px !important;
-    margin-right: 40px;
-} */
+@media (min-width: 1024px) {
+    .carousel__slide {
+        width: 350px !important;
+        margin-right: 40px;
+    }
+}
 </style>
