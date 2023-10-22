@@ -1,6 +1,6 @@
 <template>
     <aside class="side-bar-container">
-        <button class="left-nav-mobile-toggle" @click="toggleMenu()">
+        <button class="left-nav-mobile-toggle bg-gray-400" @click="toggleMenu()">
             <div class="left-nav-mobile-toggle__content--nav-hidden">
                 <svg
                     fill="#000000"
@@ -32,10 +32,10 @@
                         </g>
                     </g>
                 </svg>
-                <p className="ml-2">Menu</p>
+                <p class="ml-2">Menu</p>
             </div>
         </button>
-        <nav class="left-nav" :class="{ showMenu: breakpointToggle }" style="background: white" @click="closeMenu">
+        <nav class="left-nav" :class="{ showMenu: breakpointToggle }" style="background: white">
             <div>
                 <ul class="left-nav__root showMenu__root bg-[#faf4e5]">
                     <li>
@@ -148,13 +148,11 @@ export default {
         },
     },
     mounted: function () {
-        console.log('data', this.pageData);
-
         this.openedLevelOnes = [this.currentPath.level_one];
     },
     methods: {
         toggleLevelOne(index) {
-            console.log(index);
+            console.log('triggered');
             if (this.openedLevelOnes.includes(index)) {
                 const newArray = this.openedLevelOnes.filter((i) => i != index);
                 this.openedLevelOnes = newArray;
@@ -183,6 +181,7 @@ export default {
                 section.scrollIntoView({ behavior: 'smooth' });
                 this.$emit('hash-change', l_three.slug);
                 history.replaceState({}, '', `#${l_three.slug}`);
+                this.closeMenu();
             }
         },
         isLevelTwoActive(l_two) {

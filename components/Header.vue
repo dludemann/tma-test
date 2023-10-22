@@ -3,7 +3,8 @@ const mobileMenuOpen = ref(false);
 const mobileMenuCategoryOpen = ref<string | null>(null);
 
 const nav_links = 'text-white text-[14px] leading-[21px] font-display relative group py-2';
-const m_links = 'text-white text-[22px] leading-[33px] font-display hover:text-primary-700 active:text-primary-700';
+const m_links =
+    'text-white flex items-center gap-2 text-[22px] leading-[33px] font-display hover:text-primary-700 active:text-primary-700 group';
 
 const toggleMobileCategory = (category: string) => {
     if (mobileMenuCategoryOpen.value === category) {
@@ -119,7 +120,10 @@ const links = [
 
 <template>
     <header class="h-[60px] bg-secondary-900 relative">
-        <div class="mx-auto container h-full flex justify-between items-center px-4">
+        <div
+            :class="mobileMenuOpen ? 'fixed top-0 z-50 h-[60px] bg-black' : 'h-full '"
+            class="mx-auto container flex justify-between items-center px-4"
+        >
             <!-- LOGO -->
             <NuxtLink to="/" aria-label="Match Artist Logo Link">
                 <svg width="232" height="20" viewBox="0 0 232 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +177,7 @@ const links = [
             </nav>
 
             <!-- HAMBURGER MENU -->
-            <div class="w-10 h-10 flex lg:hidden items-center justify-center" @click="mobileMenuOpen = !mobileMenuOpen">
+            <!-- <div class="w-10 h-10 flex lg:hidden items-center justify-center" @click="mobileMenuOpen = !mobileMenuOpen">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M3 12H21M3 6H21M3 18H21"
@@ -183,17 +187,44 @@ const links = [
                         stroke-linejoin="round"
                     />
                 </svg>
+            </div> -->
+
+            <div
+                id="nav-icon3"
+                class="lg:hidden"
+                :class="mobileMenuOpen && 'open'"
+                @click="mobileMenuOpen = !mobileMenuOpen"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
 
         <!-- MOBILE MENU -->
-        <div class="bg-black h-[calc(100vh-60px)] w-full fixed z-50" v-if="mobileMenuOpen">
-            <nav class="flex flex-col gap-4 container mx-auto py-6 px-8">
+        <div
+            class="w-full fixed z-50 mt-[60px] overflow-y-auto"
+            style="height: calc(100vh - 60px)"
+            v-if="mobileMenuOpen"
+        >
+            <nav class="flex bg-black flex-col gap-4 container mx-auto py-6 px-8">
                 <div v-for="link in links" :key="link.label">
                     <a v-if="link.link" :href="link.link" :class="m_links">{{ link.label }}</a>
-                    <span v-if="link.children" :class="m_links" @click="toggleMobileCategory(link.label)">{{
-                        link.label
-                    }}</span>
+                    <span v-if="link.children" :class="m_links" @click="toggleMobileCategory(link.label)"
+                        >{{ link.label }}
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            :class="mobileMenuCategoryOpen === link.label ? 'rotate-180' : 'rotate-0'"
+                            class="w-4 h-4 stroke-current group-active:stroke-primary-700 transform transition"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </span>
 
                     <div class="flex flex-col px-4" v-if="mobileMenuCategoryOpen === link.label">
                         <a
@@ -202,11 +233,91 @@ const links = [
                             :href="child.link"
                             :key="child.link"
                             class="text-white py-2"
-                            >{{ child.label }}</a
-                        >
+                            >{{ child.label }}
+                        </a>
                     </div>
                 </div>
             </nav>
         </div>
     </header>
 </template>
+
+<style scoped>
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+    top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+    top: 8px;
+}
+
+#nav-icon3 span:nth-child(4) {
+    top: 16px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+</style>

@@ -224,7 +224,7 @@ useHead({
         <div v-for="study in studies" :key="study.firstName" class="px-6">
             <!-- TITLE -->
             <div
-                class="py-[150px] relative my-[50px]"
+                class="py-[150px] relative my-[50px] overflow-hidden"
                 :style="{
                     backgroundImage: `url(${study.hero.image})`,
                     backgroundPosition: 'center',
@@ -232,7 +232,9 @@ useHead({
                     backgroundRepeat: 'no-repeat',
                 }"
             >
-                <h1 class="font-light z-10 relative text-[96px] leading-[96px] text-center text-white">
+                <h1
+                    class="font-light z-10 relative text-[45px] mb-8 leading-[45px] lg:text-[96px] lg:leading-[96px] text-center text-white"
+                >
                     {{ study.firstName }}'s Story
                 </h1>
 

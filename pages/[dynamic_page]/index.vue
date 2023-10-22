@@ -139,7 +139,7 @@ useHead({
             </div>
 
             <div
-                class="flex gap-4 flex-col lg:flex-row justify-between relative lg:absolute lg:bottom-20 opacity-50 w-full z-50 max-w-[200px] lg:max-w-[1200px] py-12 lg:py-0"
+                class="items-center lg:items-start flex gap-8 lg:gap-4 flex-col lg:flex-row justify-between relative lg:absolute lg:bottom-20 opacity-50 w-full z-50 max-w-[300px] lg:max-w-[1200px] py-12 lg:py-0"
             >
                 <a
                     class="col-span-4 lg:col-span-1"
